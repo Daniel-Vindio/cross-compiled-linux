@@ -1,0 +1,57 @@
+program="cloog"
+version="0.18.4"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.gz
+
+description="
+
+CLooG is a software which generates loops for scanning Z-polyhedra. That is,
+CLooG finds the code or pseudo-code where each integral point of one or more
+parametrized polyhedron or parametrized polyhedra union is reached. CLooG is
+designed to avoid control overhead and to produce a very efficient code.
+
+Its input is some data on the polyhedra to scan, basically the system of
+affine inequalities that define them, and a context that defines some
+properties known on the parameters if any. The output is the pseudo scanning
+code. Many facilities are provided to generate a near-to-be-compileable code,
+and every useful functions to generate the code may be called from the CLooG
+library.
+
+---
+"
+
+build() {
+
+. /home/0-variables-build-flags
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+CC="gcc -isystem /usr/include ${BUILD32}" \
+LDFLAGS="-Wl,-rpath-link,/usr/lib:/lib ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--disable-static \
+--with-isl=system \
+--host=${CLFS_TARGET32}
+
+sed -i '/cmake/d' Makefile
+
+make
+
+make install DESTDIR=${destdir}
+
+}
+
+
+
+
+
+
+
+
+
+
+

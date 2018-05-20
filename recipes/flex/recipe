@@ -1,0 +1,43 @@
+program="flex"
+version="2.6.4"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.gz
+
+description="
+
+This is flex, the fast lexical analyzer generator.
+
+flex is a tool for generating scanners: programs which recognize 
+lexical patterns in text.
+---
+"
+
+build() {
+
+. /home/0-variables-build-flags
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+CC="gcc ${BUILD32}" \
+./configure \
+--prefix=/usr
+
+make
+
+make install DESTDIR=${destdir}
+
+}
+
+
+
+
+
+
+
+
+
+
+

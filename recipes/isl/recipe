@@ -1,0 +1,55 @@
+program="isl"
+version="0.18"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.gz
+
+description="
+
+isl is a library for manipulating sets and relations of integer points 
+bounded by linear constraints. Supported operations on sets include 
+intersection, union, set difference, emptiness check, convex hull, 
+(integer) affine hull, integer projection, and computing the 
+lexicographic minimum using parametric integer programming. It also 
+includes an ILP solver based on generalized basis reduction and 
+operations geared towards polyhedral compilation such as dependence 
+analysis, scheduling, and AST generation.
+---
+"
+
+build() {
+
+. /home/0-variables-build-flags
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\nInstalacion de $srcdir 32 Bit"
+CC="gcc -isystem /usr/include ${BUILD32}" \
+LDFLAGS="-Wl,-rpath-link,/usr/lib:/lib ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--disable-static \
+--host=${CLFS_TARGET32}
+
+make
+
+make install DESTDIR=${destdir}
+
+mkdir -pv ${destdir}/usr/share/gdb/auto-load/usr/lib
+
+mv -v ${destdir}/usr/lib/libisl*gdb.py ${destdir}/usr/share/gdb/auto-load/usr/lib
+
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+program="bison"
+version="3.0.4"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.xz
+
+description="
+
+Bison is a general-purpose parser generator that converts an annotated 
+context-free grammar into a deterministic LR or generalized LR (GLR) 
+parser employing LALR(1) parser tables. As an experimental feature, 
+Bison can also generate IELR(1) or canonical LR(1) parser tables. Once 
+you are proficient with Bison, you can use it to develop a wide range 
+of language parsers, from those used in simple desk calculators to 
+complex programming languages. 
+---
+"
+
+build() {
+
+. /home/0-variables-build-flags
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+./configure \
+--prefix=/usr
+
+make
+
+make install DESTDIR=${destdir}
+
+}
+
+
+
+
+
+
+
+
+
+
+
