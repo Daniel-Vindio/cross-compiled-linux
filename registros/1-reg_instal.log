@@ -1,0 +1,390 @@
+
+
+Instalacion de file-5.32 
+Fri May 11 23:42:31 CEST 2018 file <Configure> -> Conforme
+Fri May 11 23:42:33 CEST 2018 file <Make> -> Conforme
+Fri May 11 23:42:34 CEST 2018 file <Make_install> -> Conforme
+Fri May 11 23:42:34 CEST 2018 file <Tiempo de instalación> 23:42:21 23:42:34
+
+Instalacion de linux-4.16 
+Fri May 11 23:42:47 CEST 2018 linux <make mrproper> -> Conforme
+Fri May 11 23:42:58 CEST 2018 linux <make ARCH=x86_64 headers_check> -> Conforme
+Fri May 11 23:43:02 CEST 2018 linux <make ARCH=x86_64 INSTALL_HDR_PATH=/tools headers_install> -> Conforme
+Fri May 11 23:43:03 CEST 2018 linux <Tiempo de instalación> 23:42:34 23:43:03
+
+Instalacion de m4-1.4.18 
+Fri May 11 23:43:33 CEST 2018 m4 <Configure> -> Conforme
+Fri May 11 23:43:37 CEST 2018 m4 <Make> -> Conforme
+Fri May 11 23:43:37 CEST 2018 m4 <Make_install> -> Conforme
+Fri May 11 23:43:37 CEST 2018 m4 <Tiempo de instalación> 23:43:03 23:43:37
+
+Instalacion de ncurses-6.1 para cross-tools
+Fri May 11 23:43:48 CEST 2018 ncurses <Configure> -> Conforme
+Fri May 11 23:43:48 CEST 2018 ncurses <make -C include> -> Conforme
+Fri May 11 23:43:55 CEST 2018 ncurses <make -C progs tic> -> Conforme
+Fri May 11 23:43:55 CEST 2018 ncurses <install tic> -> Conforme
+Fri May 11 23:43:55 CEST 2018 ncurses <Tiempo de instalación> 23:43:37 23:43:55
+
+Instalacion de pkg-config-lite-0.28-1 
+Fri May 11 23:44:00 CEST 2018 pkg-config-lite <Configure> -> Conforme
+Fri May 11 23:44:01 CEST 2018 pkg-config-lite <Make> -> Conforme
+Fri May 11 23:44:01 CEST 2018 pkg-config-lite <Make_install> -> Conforme
+Fri May 11 23:44:01 CEST 2018 pkg-config-lite <Tiempo de instalación> 23:43:55 23:44:01
+
+Instalacion de gmp-6.0.0 
+Fri May 11 23:44:22 CEST 2018 gmp <Configure> -> Conforme
+Fri May 11 23:44:43 CEST 2018 gmp <Make> -> Conforme
+Fri May 11 23:44:44 CEST 2018 gmp <Make_install> -> Conforme
+Fri May 11 23:44:44 CEST 2018 gmp <Tiempo de instalación> 23:44:01 23:44:44
+
+Instalacion de mpfr-3.1.2 
+Fri May 11 23:44:53 CEST 2018 mpfr <Configure> -> Conforme
+Fri May 11 23:45:04 CEST 2018 mpfr <Make> -> Conforme
+Fri May 11 23:45:04 CEST 2018 mpfr <Make_install> -> Conforme
+Fri May 11 23:45:04 CEST 2018 mpfr <Tiempo de instalación> 23:44:44 23:45:04
+
+Instalacion de mpc-1.0.2 
+Fri May 11 23:45:09 CEST 2018 mpc <Configure> -> Conforme
+Fri May 11 23:45:12 CEST 2018 mpc <Make> -> Conforme
+Fri May 11 23:45:13 CEST 2018 mpc <Make_install> -> Conforme
+Fri May 11 23:45:13 CEST 2018 mpc <Tiempo de instalación> 23:45:04 23:45:13
+
+Instalacion de isl-0.18 
+Fri May 11 23:45:18 CEST 2018 isl <Configure> -> Conforme
+Fri May 11 23:45:39 CEST 2018 isl <Make> -> Conforme
+Fri May 11 23:45:39 CEST 2018 isl <Make_install> -> Conforme
+Fri May 11 23:45:39 CEST 2018 isl <Tiempo de instalación> 23:45:13 23:45:39
+
+Instalacion de cloog-0.18.4 
+Fri May 11 23:45:44 CEST 2018 cloog <Configure> -> Conforme
+Fri May 11 23:45:44 CEST 2018 cloog <cp -v Makefile{,.orig}> -> Conforme
+Fri May 11 23:45:44 CEST 2018 cloog <sed '/cmake/d' Makefile.orig > Makefile> -> Conforme
+Fri May 11 23:45:46 CEST 2018 cloog <Make> -> Conforme
+Fri May 11 23:45:47 CEST 2018 cloog <Make_install> -> Conforme
+Fri May 11 23:45:47 CEST 2018 cloog <Tiempo de instalación> 23:45:39 23:45:47
+
+Instalacion de binutils-2.30 
+Fri May 11 23:45:49 CEST 2018 binutils <mkdir build> -> Conforme
+Fri May 11 23:45:52 CEST 2018 binutils <Configure> -> Conforme
+Fri May 11 23:47:03 CEST 2018 binutils <Make> -> Conforme
+Fri May 11 23:47:04 CEST 2018 binutils <Make_install> -> Conforme
+Fri May 11 23:47:05 CEST 2018 binutils <Tiempo de instalación> 23:45:47 23:47:05
+
+Instalacion de gcc-8.1.0 STATIC + No Threads 
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/ia64/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/ia64/sysv4.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/alpha/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/vax/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/cris/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/tilegx/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/s390/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/mips/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/frv/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/tilepro/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/m68k/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/h8300/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/i386/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/i386/sysv4.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/i386/linux64.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/m32r/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/riscv/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/mn10300/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/rs6000/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/rs6000/sysv4.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/rs6000/linux64.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/sh/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/xtensa/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/sparc/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/sparc/sysv4.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/sparc/linux64.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/arc/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/bfin/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/microblaze/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/powerpcspe/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/powerpcspe/sysv4.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/powerpcspe/linux64.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <creado gcc/config/nios2/linux.h.orig> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <touch /tools/include/limits.h> -> Conforme
+Fri May 11 23:47:12 CEST 2018 gcc <mkdir -v build> -> Conforme
+Fri May 11 23:47:16 CEST 2018 gcc <Configure> -> Conforme
+Fri May 11 23:57:20 CEST 2018 gcc <Make> -> Conforme
+Fri May 11 23:57:27 CEST 2018 gcc <Make_install> -> Conforme
+Fri May 11 23:57:31 CEST 2018 gcc <Tiempo de instalación> 23:47:05 23:57:31
+
+Instalacion de glibc-2.27 32 Bit
+Fri May 11 23:57:44 CEST 2018 glibc <timezone> -> Conforme
+Fri May 11 23:57:44 CEST 2018 glibc <mkdir build> -> Conforme
+Fri May 11 23:57:44 CEST 2018 glibc <config.cache> -> Conforme
+Fri May 11 23:57:48 CEST 2018 glibc <Configure> -> Conforme
+Sat May 12 00:04:06 CEST 2018 glibc <Make> -> Conforme
+Sat May 12 00:05:02 CEST 2018 glibc <Make_install> -> Conforme
+Sat May 12 00:05:02 CEST 2018 glibc <Tiempo de instalación> 23:57:31 00:05:02
+
+Instalacion de glibc-2.27 64 Bit
+Sat May 12 00:05:15 CEST 2018 glibc <timezone> -> Conforme
+Sat May 12 00:05:15 CEST 2018 glibc <mkdir build> -> Conforme
+Sat May 12 00:05:15 CEST 2018 glibc <config.cache> -> Conforme
+Sat May 12 00:05:15 CEST 2018 glibc <slibdir=/tools/lib64> -> Conforme
+Sat May 12 00:05:18 CEST 2018 glibc <Configure> -> Conforme
+Sat May 12 00:11:51 CEST 2018 glibc <Make> -> Conforme
+Sat May 12 00:12:47 CEST 2018 glibc <Make_install> -> Conforme
+Sat May 12 00:12:47 CEST 2018 glibc <Tiempo de instalación> 00:05:02 00:12:47
+
+Instalacion de gcc-8.1.0 Pasada 2
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/ia64/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/ia64/sysv4.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/alpha/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/vax/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/cris/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/tilegx/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/s390/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/mips/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/frv/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/tilepro/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/m68k/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/h8300/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/i386/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/i386/sysv4.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/i386/linux64.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/m32r/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/riscv/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/mn10300/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/rs6000/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/rs6000/sysv4.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/rs6000/linux64.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/sh/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/xtensa/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/sparc/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/sparc/sysv4.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/sparc/linux64.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/arc/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/bfin/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/microblaze/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/powerpcspe/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/powerpcspe/sysv4.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/powerpcspe/linux64.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <creado gcc/config/nios2/linux.h.orig> -> Conforme
+Sat May 12 00:12:55 CEST 2018 gcc <mkdir -v build> -> Conforme
+Sat May 12 00:12:59 CEST 2018 gcc <Configure> -> Conforme
+Sat May 12 00:30:38 CEST 2018 gcc <Make> -> Conforme
+Sat May 12 00:30:55 CEST 2018 gcc <Make_install> -> Conforme
+Sat May 12 00:30:58 CEST 2018 gcc <Tiempo de instalación> 00:12:47 00:30:58
+
+Instalacion de gmp-6.0.0 cross-compile them into /tools
+Sat May 12 00:31:25 CEST 2018 gmp <Configure> -> Conforme
+Sat May 12 00:32:05 CEST 2018 gmp <Make> -> Conforme
+Sat May 12 00:32:06 CEST 2018 gmp <Make_install> -> Conforme
+Sat May 12 00:32:06 CEST 2018 gmp <Tiempo de instalación> 00:30:58 00:32:06
+
+Instalacion de mpfr-3.1.2 cross-compile them into /tools
+Sat May 12 00:32:14 CEST 2018 mpfr <Configure> -> Conforme
+Sat May 12 00:32:37 CEST 2018 mpfr <Make> -> Conforme
+Sat May 12 00:32:38 CEST 2018 mpfr <Make_install> -> Conforme
+Sat May 12 00:32:38 CEST 2018 mpfr <Tiempo de instalación> 00:32:06 00:32:38
+
+Instalacion de mpc-1.0.2 cross-compile them into /tools
+Sat May 12 00:32:43 CEST 2018 mpc <Configure> -> Conforme
+Sat May 12 00:32:49 CEST 2018 mpc <Make> -> Conforme
+Sat May 12 00:32:50 CEST 2018 mpc <Make_install> -> Conforme
+Sat May 12 00:32:50 CEST 2018 mpc <Tiempo de instalación> 00:32:38 00:32:50
+
+Instalacion de isl-0.18 cross-compile them into /tools
+Sat May 12 00:32:55 CEST 2018 isl <Configure> -> Conforme
+Sat May 12 00:33:45 CEST 2018 isl <Make> -> Conforme
+Sat May 12 00:33:45 CEST 2018 isl <Make_install> -> Conforme
+Sat May 12 00:33:45 CEST 2018 isl <Tiempo de instalación> 00:32:50 00:33:45
+
+Instalacion de cloog-0.18.4 cross-compile them into /tools
+Sat May 12 00:33:50 CEST 2018 cloog <Configure> -> Conforme
+Sat May 12 00:33:50 CEST 2018 cloog <cp -v Makefile{,.orig}> -> Conforme
+Sat May 12 00:33:50 CEST 2018 cloog <sed '/cmake/d' Makefile.orig > Makefile> -> Conforme
+Sat May 12 00:33:55 CEST 2018 cloog <Make> -> Conforme
+Sat May 12 00:33:55 CEST 2018 cloog <Make_install> -> Conforme
+Sat May 12 00:33:55 CEST 2018 cloog <Tiempo de instalación> 00:33:45 00:33:55
+
+Instalacion de zlib-1.2.11 
+Sat May 12 00:33:56 CEST 2018 zlib <Configure> -> Conforme
+Sat May 12 00:33:59 CEST 2018 zlib <Make> -> Conforme
+Sat May 12 00:33:59 CEST 2018 zlib <Make_install> -> Conforme
+Sat May 12 00:33:59 CEST 2018 zlib <Tiempo de instalación> 00:33:55 00:33:59
+
+Instalacion de binutils-2.30 
+Sat May 12 00:34:05 CEST 2018 binutils <mkdir build> -> Conforme
+Sat May 12 00:34:07 CEST 2018 binutils <Configure> -> Conforme
+Sat May 12 00:35:53 CEST 2018 binutils <Make> -> Conforme
+Sat May 12 00:35:54 CEST 2018 binutils <Make_install> -> Conforme
+Sat May 12 00:35:55 CEST 2018 binutils <Tiempo de instalación> 00:33:59 00:35:55
+
+Instalacion de gcc-8.1.0 3º Sistema temporal
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/ia64/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/ia64/sysv4.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/alpha/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/vax/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/cris/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/tilegx/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/s390/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/mips/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/frv/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/tilepro/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/m68k/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/h8300/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/i386/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/i386/sysv4.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/i386/linux64.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/m32r/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/riscv/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/mn10300/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/rs6000/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/rs6000/sysv4.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/rs6000/linux64.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/sh/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/xtensa/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/sparc/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/sparc/sysv4.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/sparc/linux64.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/arc/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/bfin/linux.h.orig> -> Conforme
+Sat May 12 00:36:02 CEST 2018 gcc <creado gcc/config/microblaze/linux.h.orig> -> Conforme
+Sat May 12 00:36:03 CEST 2018 gcc <creado gcc/config/powerpcspe/linux.h.orig> -> Conforme
+Sat May 12 00:36:03 CEST 2018 gcc <creado gcc/config/powerpcspe/sysv4.h.orig> -> Conforme
+Sat May 12 00:36:03 CEST 2018 gcc <creado gcc/config/powerpcspe/linux64.h.orig> -> Conforme
+Sat May 12 00:36:03 CEST 2018 gcc <creado gcc/config/nios2/linux.h.orig> -> Conforme
+Sat May 12 00:36:03 CEST 2018 gcc <cp -v gcc/Makefile.in{,.orig}> -> Conforme
+Sat May 12 00:36:03 CEST 2018 gcc <sed fixincludes> -> Conforme
+Sat May 12 00:36:03 CEST 2018 gcc <mkdir -v build> -> Conforme
+Sat May 12 00:36:06 CEST 2018 gcc <Configure> -> Conforme
+Sat May 12 00:36:06 CEST 2018 gcc <cp -v Makefile{,.orig}> -> Conforme
+Sat May 12 00:36:06 CEST 2018 gcc <sed GMP etc> -> Conforme
+Sat May 12 00:59:52 CEST 2018 gcc <Make> -> Conforme
+Sat May 12 01:00:11 CEST 2018 gcc <Make_install> -> Conforme
+Sat May 12 01:00:11 CEST 2018 gcc <cp libiberty.h> -> Conforme
+Sat May 12 01:00:14 CEST 2018 gcc <Tiempo de instalación> 00:35:55 01:00:14
+
+Instalacion de ncurses-6.1 
+Sat May 12 01:00:27 CEST 2018 ncurses <Configure> -> Conforme
+Sat May 12 01:01:06 CEST 2018 ncurses <Make> -> Conforme
+Sat May 12 01:01:17 CEST 2018 ncurses <Make_install> -> Conforme
+Sat May 12 01:01:17 CEST 2018 ncurses <Tiempo de instalación> 01:00:14 01:01:17
+
+Instalacion de bash-4.4.18 
+Sat May 12 01:01:18 CEST 2018 bash <config.cache> -> Conforme
+Sat May 12 01:01:43 CEST 2018 bash <Configure> -> Conforme
+Sat May 12 01:02:05 CEST 2018 bash <Make> -> Conforme
+Sat May 12 01:02:07 CEST 2018 bash <Make_install> -> Conforme
+Sat May 12 01:02:07 CEST 2018 bash <Tiempo de instalación> 01:01:17 01:02:07
+
+Instalacion de bzip2-1.0.6 
+Sat May 12 01:02:07 CEST 2018 bzip2 <cp -v Makefile{,.orig}> -> Conforme
+Sat May 12 01:02:07 CEST 2018 bzip2 <sed -e 's@^\(all:.*\) test@\1@g'> -> Conforme
+Sat May 12 01:02:09 CEST 2018 bzip2 <Make> -> Conforme
+Sat May 12 01:02:09 CEST 2018 bzip2 <Make_install> -> Conforme
+Sat May 12 01:02:09 CEST 2018 bzip2 <Tiempo de instalación> 01:02:07 01:02:09
+
+Instalacion de check-0.12.0 
+Sat May 12 01:02:20 CEST 2018 check <Configure> -> Conforme
+Sat May 12 01:02:29 CEST 2018 check <Make> -> Conforme
+Sat May 12 01:02:29 CEST 2018 check <Make_install> -> Conforme
+Sat May 12 01:02:29 CEST 2018 check <Tiempo de instalación> 01:02:09 01:02:29
+
+Instalacion de coreutils-8.29 
+Sat May 12 01:02:30 CEST 2018 coreutils <config.cache> -> Conforme
+Sat May 12 01:03:16 CEST 2018 coreutils <Configure> -> Conforme
+Sat May 12 01:03:48 CEST 2018 coreutils <Make> -> Conforme
+Sat May 12 01:03:51 CEST 2018 coreutils <Make_install> -> Conforme
+Sat May 12 01:03:51 CEST 2018 coreutils <Tiempo de instalación> 01:02:29 01:03:51
+
+Instalacion de diffutils-3.6 
+Sat May 12 01:04:19 CEST 2018 diffutils <Configure> -> Conforme
+Sat May 12 01:04:28 CEST 2018 diffutils <Make> -> Conforme
+Sat May 12 01:04:29 CEST 2018 diffutils <Make_install> -> Conforme
+Sat May 12 01:04:29 CEST 2018 diffutils <Tiempo de instalación> 01:03:51 01:04:29
+
+Instalacion de file-5.32 
+Sat May 12 01:04:39 CEST 2018 file <Configure> -> Conforme
+Sat May 12 01:04:42 CEST 2018 file <Make> -> Conforme
+Sat May 12 01:04:42 CEST 2018 file <Make_install> -> Conforme
+Sat May 12 01:04:42 CEST 2018 file <Tiempo de instalación> 01:04:29 01:04:42
+
+Instalacion de findutils-4.6.0 
+Sat May 12 01:04:42 CEST 2018 findutils <config.cache 1> -> Conforme
+Sat May 12 01:04:42 CEST 2018 findutils <config.cache 2> -> Conforme
+Sat May 12 01:05:31 CEST 2018 findutils <Configure> -> Conforme
+Sat May 12 01:05:45 CEST 2018 findutils <Make> -> Conforme
+Sat May 12 01:05:46 CEST 2018 findutils <Make_install> -> Conforme
+Sat May 12 01:05:46 CEST 2018 findutils <Tiempo de instalación> 01:04:42 01:05:46
+
+Instalacion de gawk-4.2.0 
+Sat May 12 01:06:04 CEST 2018 gawk <Configure> -> Conforme
+Sat May 12 01:06:19 CEST 2018 gawk <Make> -> Conforme
+Sat May 12 01:06:21 CEST 2018 gawk <Make_install> -> Conforme
+Sat May 12 01:06:21 CEST 2018 gawk <Tiempo de instalación> 01:05:46 01:06:21
+
+Instalacion de gettext-0.19.8.1 
+Sat May 12 01:06:21 CEST 2018 gettext <config.cache> -> Conforme
+Sat May 12 01:07:19 CEST 2018 gettext <Configure> -> Conforme
+Sat May 12 01:07:53 CEST 2018 gettext <Make> -> Conforme
+Sat May 12 01:07:53 CEST 2018 gettext <Make> -> Conforme
+Sat May 12 01:08:08 CEST 2018 gettext <Make> -> Conforme
+Sat May 12 01:08:08 CEST 2018 gettext <Make_install> -> Conforme
+Sat May 12 01:08:08 CEST 2018 gettext <Tiempo de instalación> 01:06:21 01:08:08
+
+Instalacion de grep-3.1 
+Sat May 12 01:08:32 CEST 2018 grep <Configure> -> Conforme
+Sat May 12 01:08:37 CEST 2018 grep <Make> -> Conforme
+Sat May 12 01:08:38 CEST 2018 grep <Make_install> -> Conforme
+Sat May 12 01:08:38 CEST 2018 grep <Tiempo de instalación> 01:08:08 01:08:38
+
+Instalacion de gzip-1.9 
+Sat May 12 01:08:50 CEST 2018 gzip <Configure> -> Conforme
+Sat May 12 01:08:54 CEST 2018 gzip <Make> -> Conforme
+Sat May 12 01:08:54 CEST 2018 gzip <Make_install> -> Conforme
+Sat May 12 01:08:54 CEST 2018 gzip <Tiempo de instalación> 01:08:38 01:08:54
+
+Instalacion de make-4.2.1 
+Sat May 12 01:08:54 CEST 2018 make <sed en glob/glob.c> -> Conforme
+Sat May 12 01:09:03 CEST 2018 make <Configure> -> Conforme
+Sat May 12 01:09:07 CEST 2018 make <Make> -> Conforme
+Sat May 12 01:09:07 CEST 2018 make <Make_install> -> Conforme
+Sat May 12 01:09:07 CEST 2018 make <Tiempo de instalación> 01:08:54 01:09:07
+
+Instalacion de patch-2.7.6 
+Sat May 12 01:09:34 CEST 2018 patch <Configure> -> Conforme
+Sat May 12 01:09:39 CEST 2018 patch <Make> -> Conforme
+Sat May 12 01:09:39 CEST 2018 patch <Make_install> -> Conforme
+Sat May 12 01:09:39 CEST 2018 patch <Tiempo de instalación> 01:09:07 01:09:39
+
+Instalacion de sed-4.4 
+Sat May 12 01:10:02 CEST 2018 sed <Configure> -> Conforme
+Sat May 12 01:10:07 CEST 2018 sed <Make> -> Conforme
+Sat May 12 01:10:08 CEST 2018 sed <Make_install> -> Conforme
+Sat May 12 01:10:08 CEST 2018 sed <Tiempo de instalación> 01:09:39 01:10:08
+
+Instalacion de tar-1.30 
+Sat May 12 01:10:08 CEST 2018 tar <config.cache> -> Conforme
+Sat May 12 01:10:45 CEST 2018 tar <Configure> -> Conforme
+Sat May 12 01:10:58 CEST 2018 tar <Make> -> Conforme
+Sat May 12 01:10:59 CEST 2018 tar <Make_install> -> Conforme
+Sat May 12 01:10:59 CEST 2018 tar <Tiempo de instalación> 01:10:08 01:10:59
+
+Instalacion de util-linux-2.31.1 
+Sat May 12 01:11:19 CEST 2018 util-linux <Configure> -> Conforme
+Sat May 12 01:12:24 CEST 2018 util-linux <Make> -> Conforme
+Sat May 12 01:12:27 CEST 2018 util-linux <Make_install> -> Conforme
+Sat May 12 01:12:27 CEST 2018 util-linux <Tiempo de instalación> 01:10:59 01:12:27
+
+Instalacion de vim80 
+Sat May 12 01:12:43 CEST 2018 vim <Configure> -> Conforme
+Sat May 12 01:12:55 CEST 2018 vim <Make> -> Conforme
+Sat May 12 01:12:55 CEST 2018 vim <Make_install> -> Conforme
+Sat May 12 01:12:55 CEST 2018 vim <ln -sv vim /tools/bin/vi> -> Conforme
+Sat May 12 01:12:55 CEST 2018 vim <cat > /tools/etc/vimrc> -> Conforme
+Sat May 12 01:12:55 CEST 2018 vim <Tiempo de instalación> 01:12:27 01:12:55
+
+Instalacion de xz-5.2.3 
+Sat May 12 01:13:06 CEST 2018 xz <Configure> -> Conforme
+Sat May 12 01:13:22 CEST 2018 xz <Make> -> Conforme
+Sat May 12 01:13:23 CEST 2018 xz <Make_install> -> Conforme
+Sat May 12 01:13:23 CEST 2018 xz <Tiempo de instalación> 01:12:55 01:13:23

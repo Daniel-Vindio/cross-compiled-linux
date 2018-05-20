@@ -1,0 +1,271 @@
+
+Instalacion de tcl8.6.8 
+Sun May 20 08:04:21 UTC 2018 tcl <sed> -> Conforme
+Sun May 20 08:04:30 UTC 2018 tcl <Configure> -> Conforme
+Sun May 20 08:06:54 UTC 2018 tcl <Make> -> Conforme
+Sun May 20 08:07:08 UTC 2018 tcl <Make_install> -> Conforme
+Sun May 20 08:07:08 UTC 2018 tcl <make install-private-headers> -> Conforme
+Sun May 20 08:07:08 UTC 2018 tcl <ln -sv tclsh8.6 /tools/bin/tclsh> -> Conforme
+Sun May 20 08:07:08 UTC 2018 tcl <Tiempo de instalación> 08:04:20 08:07:08
+
+Instalacion de expect5.45.4 
+Sun May 20 08:07:17 UTC 2018 expect <Configure> -> Conforme
+Sun May 20 08:07:22 UTC 2018 expect <Make> -> Conforme
+Sun May 20 08:07:22 UTC 2018 expect <Make_install> -> Conforme
+Sun May 20 08:07:22 UTC 2018 expect <Tiempo de instalación> 08:07:08 08:07:22
+
+Instalacion de dejagnu-1.6.1 
+Sun May 20 08:07:23 UTC 2018 dejagnu <Configure> -> Conforme
+Sun May 20 08:07:24 UTC 2018 dejagnu <Make> -> Conforme
+Sun May 20 08:07:24 UTC 2018 dejagnu <Make_install> -> Conforme
+Sun May 20 08:07:24 UTC 2018 dejagnu <Tiempo de instalación> 08:07:22 08:07:24
+
+Instalacion de perl-5.26.1 
+Sun May 20 08:08:17 UTC 2018 perl <Configure> -> Conforme
+Sun May 20 08:11:49 UTC 2018 perl <Make> -> Conforme
+Sun May 20 08:12:02 UTC 2018 perl <Make_install> -> Conforme
+Sun May 20 08:12:02 UTC 2018 perl <ln -sfv /tools/bin/perl /usr/bin> -> Conforme
+Sun May 20 08:12:03 UTC 2018 perl <Tiempo de instalación> 08:07:24 08:12:03
+
+Instalacion de texinfo-6.5 
+Sun May 20 08:12:45 UTC 2018 texinfo <Configure> -> Conforme
+Sun May 20 08:13:09 UTC 2018 texinfo <Make> -> Conforme
+Sun May 20 08:13:10 UTC 2018 texinfo <Make_install> -> Conforme
+Sun May 20 08:13:10 UTC 2018 texinfo <Tiempo de instalación> 08:12:03 08:13:10
+
+Instalacion de m4-1.4.18 
+Sun May 20 08:13:39 UTC 2018 m4 <Configure> -> Conforme
+Sun May 20 08:13:50 UTC 2018 m4 <Make> -> Conforme
+Sun May 20 08:13:50 UTC 2018 m4 <Make_install> -> Conforme
+Sun May 20 08:13:50 UTC 2018 m4 <Tiempo de instalación> 08:13:10 08:13:50
+
+Instalacion de bison-3.0.4 
+Sun May 20 08:14:31 UTC 2018 bison <Configure> -> Conforme
+Sun May 20 08:14:50 UTC 2018 bison <Make> -> Conforme
+Sun May 20 08:14:51 UTC 2018 bison <Make_install> -> Conforme
+Sun May 20 08:14:51 UTC 2018 bison <Tiempo de instalación> 08:13:50 08:14:51
+
+Instalacion de lzip-1.20 
+Sun May 20 08:14:52 UTC 2018 lzip <Configure> -> Conforme
+Sun May 20 08:14:59 UTC 2018 lzip <Make> -> Conforme
+Sun May 20 08:14:59 UTC 2018 lzip <Make_install> -> Conforme
+Sun May 20 08:14:59 UTC 2018 lzip <Tiempo de instalación> 08:14:51 08:14:59
+
+Instalacion de unzip60 
+Sun May 20 08:14:59 UTC 2018 unzip <parche fuentes bzip2> -> Conforme
+Sun May 20 08:15:04 UTC 2018 unzip <Configure> -> Conforme
+Sun May 20 08:15:14 UTC 2018 unzip <Make> -> Conforme
+Sun May 20 08:15:14 UTC 2018 unzip <Make_install> -> Conforme
+Sun May 20 08:15:14 UTC 2018 unzip <Tiempo de instalación> 08:14:59 08:15:14
+
+Instalacion de graft-2.16 
+Sun May 20 08:15:14 UTC 2018 graft <Parche ok> -> Conforme
+Sun May 20 08:15:14 UTC 2018 graft <Make> -> Conforme
+Sun May 20 08:15:14 UTC 2018 graft <make install> -> Conforme
+Sun May 20 08:15:14 UTC 2018 graft <ln -sv /usr/pkgs/graft-2.16/bin/graft /usr/bin> -> Conforme
+Sun May 20 08:15:14 UTC 2018 graft <Tiempo de instalación> 08:15:14 08:15:14
+
+Instalacion de qi-1.0-rc24 
+Sun May 20 08:15:14 UTC 2018 qi <Configure> -> Conforme
+Sun May 20 08:15:14 UTC 2018 qi <Make> -> Conforme
+Sun May 20 08:15:14 UTC 2018 qi <make install> -> Conforme
+Sun May 20 08:15:14 UTC 2018 qi <mkadir worktree> -> Conforme
+Sun May 20 08:15:14 UTC 2018 qi <Tiempo de instalación> 08:15:14 08:15:14
+
+Instalacion de linux-4.16 
+Sun May 20 08:15:34 UTC 2018 linux <make mrproper> -> Conforme
+Sun May 20 08:15:44 UTC 2018 linux <make INSTALL_HDR_PATH=dest headers_install> -> Conforme
+Sun May 20 08:15:44 UTC 2018 linux <find dest/include \( -name .install -o -name ..install.cmd \) -delete> -> Conforme
+Sun May 20 08:15:44 UTC 2018 linux <cp -rv dest/include/* /usr/include> -> Conforme
+Sun May 20 08:15:45 UTC 2018 linux <Tiempo de instalación> 08:15:14 08:15:45
+
+Instalacion de man-pages-4.15 
+Sun May 20 08:15:46 UTC 2018 man-pages <make install> -> Conforme
+Sun May 20 08:15:46 UTC 2018 man-pages <Tiempo de instalación> 08:15:46 08:15:46
+
+Instalacion de glibc-2.27 32 Bit
+Sun May 20 08:15:58 UTC 2018 glibc <timezone> -> Conforme
+Sun May 20 08:15:58 UTC 2018 glibc <mkdir build> -> Conforme
+Sun May 20 08:16:03 UTC 2018 glibc <Configure> -> Conforme
+Sun May 20 08:30:42 UTC 2018 glibc <Make> -> Conforme
+Sun May 20 08:30:42 UTC 2018 glibc <touch /etc/ld.so.conf> -> Conforme
+Sun May 20 08:31:51 UTC 2018 glibc <make install> -> Conforme
+Sun May 20 08:31:51 UTC 2018 glibc <rm -v /usr/include/rpcsvc/*.x> -> Conforme
+Sun May 20 08:31:52 UTC 2018 glibc <Tiempo de instalación> 08:15:46 08:31:52
+
+Instalacion de glibc-2.27 64 Bit
+Sun May 20 08:32:04 UTC 2018 glibc <Sed test-installation.pl 1> -> Conforme
+Sun May 20 08:32:04 UTC 2018 glibc <timezone> -> Conforme
+Sun May 20 08:32:04 UTC 2018 glibc <mkdir build> -> Conforme
+Sun May 20 08:32:04 UTC 2018 glibc <slibdir=/lib64 >> configparms> -> Conforme
+Sun May 20 08:32:10 UTC 2018 glibc <Configure> -> Conforme
+Sun May 20 08:47:19 UTC 2018 glibc <Make> -> Conforme
+Sun May 20 08:48:32 UTC 2018 glibc <Make_install> -> Conforme
+Sun May 20 08:48:32 UTC 2018 glibc <rm -v /usr/include/rpcsvc/*.x> -> Conforme
+Sun May 20 08:48:32 UTC 2018 glibc <cp -v ../nscd/nscd.conf /etc/nscd.conf> -> Conforme
+Sun May 20 08:48:32 UTC 2018 glibc <mkdir -pv /var/cache/nscd> -> Conforme
+Sun May 20 08:48:32 UTC 2018 glibc <mkdir -pv /usr/lib/locale> -> Conforme
+Sun May 20 08:48:33 UTC 2018 glibc <localedef -i es_ES -f ISO-8859-1 es_ES> -> Conforme
+Sun May 20 08:48:33 UTC 2018 glibc <localedef -i es_ES@euro -f ISO-8859-15 es_ES@euro> -> Conforme
+Sun May 20 08:48:39 UTC 2018 glibc </etc/nsswitch.conf> -> Conforme
+Sun May 20 08:48:39 UTC 2018 glibc <tar -xf ../../tzdata-2018d.tar.xz> -> Conforme
+Sun May 20 08:48:39 UTC 2018 glibc <mkdir -pv /usr/share/zoneinfo/{posix,right}> -> Conforme
+Sun May 20 08:48:39 UTC 2018 glibc <for tz in etcetera> -> Conforme
+Sun May 20 08:48:39 UTC 2018 glibc <cp -v zone.tab iso3166.tab /usr/share/zoneinfo> -> Conforme
+Sun May 20 08:48:39 UTC 2018 glibc <zic -d /usr/share/zoneinfo -p America/New_York> -> Conforme
+Sun May 20 08:48:39 UTC 2018 glibc <cp -v /usr/share/zoneinfo/Europe/Madrid /etc/localtime> -> Conforme
+Sun May 20 08:48:39 UTC 2018 glibc </etc/ld.so.conf> -> Conforme
+Sun May 20 08:48:39 UTC 2018 glibc <Tiempo de instalación> 08:31:52 08:48:39
+
+10.9. Adjusting the Toolchain and TESTS
+Sun May 20 08:48:40 UTC 2018  <gcc -dumpspecs > -> Conforme
+Sun May 20 08:48:40 UTC 2018 <      [Requesting program interpreter: /lib/ld-linux.so.2]> -> Conforme
+Sun May 20 08:48:40 UTC 2018 <      [Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]> -> Conforme
+
+Instalacion de m4-1.4.18 
+Sun May 20 08:49:10 UTC 2018 m4 <Configure> -> Conforme
+Sun May 20 08:49:20 UTC 2018 m4 <Make> -> Conforme
+Sun May 20 08:49:21 UTC 2018 m4 <Make_install> -> Conforme
+Sun May 20 08:49:21 UTC 2018 m4 <Tiempo de instalación> 08:48:40 08:49:21
+
+Instalacion de gmp-6.0.0 32 bit on a 64 bit machine
+Sun May 20 08:49:21 UTC 2018 gmp <mv -v config{fsf,}.guess> -> Conforme
+Sun May 20 08:49:21 UTC 2018 gmp <mv -v config{fsf,}.sub> -> Conforme
+Sun May 20 08:49:43 UTC 2018 gmp <Configure> -> Conforme
+Sun May 20 08:50:46 UTC 2018 gmp <Make> -> Conforme
+Sun May 20 08:50:46 UTC 2018 gmp <Make_install> -> Conforme
+Sun May 20 08:50:46 UTC 2018 gmp <mv -v /usr/include/gmp{,-32}.h> -> Conforme
+Sun May 20 08:50:46 UTC 2018 gmp <Tiempo de instalación> 08:49:21 08:50:46
+
+Instalacion de gmp-6.0.0 64 bit on a 64 bit machine
+Sun May 20 08:51:09 UTC 2018 gmp <Configure> -> Conforme
+Sun May 20 08:52:53 UTC 2018 gmp <Make> -> Conforme
+Sun May 20 08:52:56 UTC 2018 gmp <make html> -> Conforme
+Sun May 20 08:52:56 UTC 2018 gmp <Make_install> -> Conforme
+Sun May 20 08:52:57 UTC 2018 gmp <make install-html> -> Conforme
+Sun May 20 08:52:57 UTC 2018 gmp <mv -v /usr/include/gmp{,-64}.h> -> Conforme
+Sun May 20 08:52:57 UTC 2018 gmp <cat > /usr/include/gmp.h> -> Conforme
+Sun May 20 08:52:57 UTC 2018 gmp <Tiempo de instalación> 08:50:46 08:52:57
+
+Instalacion de mpfr-3.1.2 32 bit on 64 bit machine, MULTILIB
+Sun May 20 08:53:05 UTC 2018 mpfr <Configure> -> Conforme
+Sun May 20 08:53:41 UTC 2018 mpfr <Make> -> Conforme
+Sun May 20 08:53:41 UTC 2018 mpfr <Make_install> -> Conforme
+Sun May 20 08:53:41 UTC 2018 mpfr <Tiempo de instalación> 08:52:57 08:53:41
+
+Instalacion de mpfr-3.1.2 64 bit on 64 bit machine, MULTILIB
+Sun May 20 08:53:51 UTC 2018 mpfr <Configure> -> Conforme
+Sun May 20 08:54:51 UTC 2018 mpfr <Make> -> Conforme
+Sun May 20 08:54:52 UTC 2018 mpfr <make html> -> Conforme
+Sun May 20 08:54:52 UTC 2018 mpfr <Make_install> -> Conforme
+Sun May 20 08:54:53 UTC 2018 mpfr <make install-html> -> Conforme
+Sun May 20 08:54:53 UTC 2018 mpfr <Tiempo de instalación> 08:53:41 08:54:53
+
+Instalacion de mpc-1.0.2 32 bit on 64 bit machine, MULTILIB
+Sun May 20 08:54:58 UTC 2018 mpc <Configure> -> Conforme
+Sun May 20 08:55:07 UTC 2018 mpc <Make> -> Conforme
+Sun May 20 08:55:07 UTC 2018 mpc <Make_install> -> Conforme
+Sun May 20 08:55:07 UTC 2018 mpc <Tiempo de instalación> 08:54:53 08:55:07
+
+Instalacion de mpc-1.0.2 64 bit on 64 bit machine, MULTILIB
+Sun May 20 08:55:12 UTC 2018 mpc <Configure> -> Conforme
+Sun May 20 08:55:28 UTC 2018 mpc <Make> -> Conforme
+Sun May 20 08:55:28 UTC 2018 mpc <make html> -> Conforme
+Sun May 20 08:55:29 UTC 2018 mpc <Make_install> -> Conforme
+Sun May 20 08:55:29 UTC 2018 mpc <make install-html> -> Conforme
+Sun May 20 08:55:29 UTC 2018 mpc <Tiempo de instalación> 08:55:07 08:55:29
+
+Instalacion de isl-0.18 32 bit on 64 bit machine, MULTILIB
+Sun May 20 08:55:35 UTC 2018 isl <Configure> -> Conforme
+Sun May 20 08:56:30 UTC 2018 isl <Make> -> Conforme
+Sun May 20 08:56:30 UTC 2018 isl <Make_install> -> Conforme
+Sun May 20 08:56:30 UTC 2018 isl <mkdir -pv /usr/share/gdb/auto-load/usr/lib> -> Conforme
+Sun May 20 08:56:30 UTC 2018 isl <mv -v /usr/lib/libisl*gdb.py > -> Conforme
+Sun May 20 08:56:30 UTC 2018 isl <Tiempo de instalación> 08:55:29 08:56:30
+
+Instalacion de isl-0.18 64 bit on 64 bit machine, MULTILIB
+Sun May 20 08:56:36 UTC 2018 isl <Configure> -> Conforme
+Sun May 20 08:58:23 UTC 2018 isl <Make> -> Conforme
+Sun May 20 08:58:23 UTC 2018 isl <Make_install> -> Conforme
+Sun May 20 08:58:23 UTC 2018 isl <mkdir -pv /usr/share/gdb/auto-load/usr/lib64> -> Conforme
+Sun May 20 08:58:23 UTC 2018 isl <mv -v /usr/lib64/*gdb.py > -> Conforme
+Sun May 20 08:58:23 UTC 2018 isl <Tiempo de instalación> 08:56:30 08:58:23
+
+Instalacion de cloog-0.18.4 32 bit on 64 bit machine, MULTILIB
+Sun May 20 08:58:28 UTC 2018 cloog <Configure> -> Conforme
+Sun May 20 08:58:28 UTC 2018 cloog <sed -i '/cmake/d' Makefile> -> Conforme
+Sun May 20 08:58:34 UTC 2018 cloog <Make> -> Conforme
+Sun May 20 08:58:41 UTC 2018 cloog <Tiempo de instalación> 08:58:23 08:58:41
+
+Instalacion de cloog-0.18.4 64 bit on 64 bit machine, MULTILIB
+Sun May 20 08:58:45 UTC 2018 cloog <Configure> -> Conforme
+Sun May 20 08:58:45 UTC 2018 cloog <sed -i '/cmake/d' Makefile> -> Conforme
+Sun May 20 08:58:56 UTC 2018 cloog <Make> -> Conforme
+Sun May 20 08:59:02 UTC 2018 cloog <Tiempo de instalación> 08:58:41 08:59:02
+
+Instalacion de zlib-1.2.11 32 bit on 64 bit machine, MULTILIB
+Sun May 20 08:59:03 UTC 2018 zlib <Configure> -> Conforme
+Sun May 20 08:59:11 UTC 2018 zlib <Make> -> Conforme
+Sun May 20 08:59:11 UTC 2018 zlib <Make_install> -> Conforme
+Sun May 20 08:59:11 UTC 2018 zlib <mv -v /usr/lib/libz.so.* /lib> -> Conforme
+Sun May 20 08:59:11 UTC 2018 zlib <ln -sfv ../../lib/../../lib/libz.so.1.2.11> -> Conforme
+Sun May 20 08:59:11 UTC 2018 zlib <Tiempo de instalación> 08:59:02 08:59:11
+
+Instalacion de zlib-1.2.11 64 bit on 64 bit machine, MULTILIB
+Sun May 20 08:59:12 UTC 2018 zlib <Configure> -> Conforme
+Sun May 20 08:59:19 UTC 2018 zlib <Make> -> Conforme
+Sun May 20 08:59:19 UTC 2018 zlib <Make_install> -> Conforme
+Sun May 20 08:59:19 UTC 2018 zlib <mv -v /usr/lib64/libz.so.* /lib64> -> Conforme
+Sun May 20 08:59:19 UTC 2018 zlib <ln -sfv ../../lib64/$...> -> Conforme
+Sun May 20 08:59:19 UTC 2018 zlib <Tiempo de instalación> 08:59:11 08:59:19
+
+Instalacion de flex-2.6.4 32 bit on 64 bit machine, MULTILIB
+Sun May 20 08:59:27 UTC 2018 flex <Configure> -> Conforme
+Sun May 20 08:59:41 UTC 2018 flex <Make> -> Conforme
+Sun May 20 08:59:41 UTC 2018 flex <Make_install> -> Conforme
+Sun May 20 08:59:41 UTC 2018 flex <Tiempo de instalación> 08:59:19 08:59:41
+
+Instalacion de flex-2.6.4 64 bit on 64 bit machine, MULTILIB
+Sun May 20 08:59:50 UTC 2018 flex <Configure> -> Conforme
+Sun May 20 09:00:03 UTC 2018 flex <Make> -> Conforme
+Sun May 20 09:00:04 UTC 2018 flex <Make_install> -> Conforme
+Sun May 20 09:00:04 UTC 2018 flex <cat > /usr/bin/lex> -> Conforme
+Sun May 20 09:00:04 UTC 2018 flex <chmod -v 755 /usr/bin/lex> -> Conforme
+Sun May 20 09:00:04 UTC 2018 flex <Tiempo de instalación> 08:59:41 09:00:04
+
+Instalacion de bison-3.0.4 32 bit on 64 bit machine, MULTILIB
+Sun May 20 09:00:46 UTC 2018 bison <Configure> -> Conforme
+Sun May 20 09:01:06 UTC 2018 bison <Make> -> Conforme
+Sun May 20 09:01:07 UTC 2018 bison <Make_install> -> Conforme
+Sun May 20 09:01:07 UTC 2018 bison <Tiempo de instalación> 09:00:04 09:01:07
+
+Instalacion de bison-3.0.4 64 bit on 64 bit machine, MULTILIB.
+Sun May 20 09:01:49 UTC 2018 bison <Configure> -> Conforme
+Sun May 20 09:02:09 UTC 2018 bison <Make> -> Conforme
+Sun May 20 09:02:10 UTC 2018 bison <Make_install> -> Conforme
+Sun May 20 09:02:10 UTC 2018 bison <Tiempo de instalación> 09:01:07 09:02:10
+
+Instalacion de binutils-2.30 64 bit on 64 bit machine, MULTILIB.
+Sun May 20 09:02:13 UTC 2018 binutils <mkdir build> -> Conforme
+Sun May 20 09:02:15 UTC 2018 binutils <Configure> -> Conforme
+Sun May 20 09:14:06 UTC 2018 binutils <Make> -> Conforme
+Sun May 20 09:14:15 UTC 2018 binutils <Make_install> -> Conforme
+Sun May 20 09:14:15 UTC 2018 binutils <Tiempo de instalación> 09:02:10 09:14:15
+
+Instalacion de gcc-8.1.0 64 bit on 64 bit machine, MULTILIB.
+Sun May 20 09:14:23 UTC 2018 gcc <sed -i 's@\....> -> Conforme
+Sun May 20 09:14:23 UTC 2018 gcc <mkdir build> -> Conforme
+Sun May 20 09:14:26 UTC 2018 gcc <Configure> -> Conforme
+Sun May 20 11:46:59 UTC 2018 gcc <Make> -> Conforme
+Sun May 20 11:47:38 UTC 2018 gcc <Make_install> -> Conforme
+Sun May 20 11:47:38 UTC 2018 gcc <ln -sv /usr/bin/cpp /lib> -> Conforme
+Sun May 20 11:47:38 UTC 2018 gcc <ln -sv gcc /usr/bin/cc> -> Conforme
+Sun May 20 11:47:38 UTC 2018 gcc <install -v -dm755 /usr/lib/bfd-plugins> -> Conforme
+Sun May 20 11:47:38 UTC 2018 gcc <ln -sfv ../../libexec/gcc/x86_64-pc-linux-gnu/8.1.0/> -> Conforme
+Sun May 20 11:47:38 UTC 2018 gcc <mkdir -pv /usr/share/gdb/auto-load/usr/lib> -> Conforme
+Sun May 20 11:47:38 UTC 2018 gcc <mv -v /usr/lib/*gdb.py /usr/share/gdb/----> -> Conforme
+Sun May 20 11:47:38 UTC 2018 gcc <Tiempo de instalación> 09:14:15 11:47:38
+
+GCC Tests
+Sun May 20 11:47:38 UTC 2018 <      [Requesting program interpreter: /lib/ld-linux.so.2]> -> Conforme
+Sun May 20 11:47:38 UTC 2018 <      [Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]> -> Conforme
