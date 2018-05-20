@@ -1,0 +1,63 @@
+#This set of variables is for CLFS
+
+echo -e "
+############################################################\n\
+#  General variables---------------------------------------#\n\
+############################################################\n"
+
+set +h
+umask 022
+
+LC_ALL=POSIX
+export LC_ALL
+
+PATH=/cross-tools/bin:/bin:/usr/bin
+export PATH
+
+CLFS=/mnt/clfs
+export CLFS
+
+unset CFLAGS CXXFLAGS
+
+#=================Variables para los meta instaladores==================
+srcdir=$(pwd)
+
+srcinst1="$srcdir/1-inst-cross-tools-multilib"
+srcinst2="$srcdir/2-inst-chroot"
+srcinst3="$srcdir/3-inst-clfs-system"
+dirversiones="$srcdir/versiones"
+#qipkgs32="$srcdir/paquetes32"
+chrootqipkgs="$CLFS/qipkgs"
+croothome="$CLFS/home"
+export srcdir srcinst1 srcinst2 srcinst3 dirversiones qipkgs32 \
+	   chrootqipkgs croothome 
+
+#=================Variables para los instaladores=======================
+#--Variables para mensajes
+MSG_CONF="Configure"
+MSG_MAKE="Make"
+MSG_CHK="Check"
+MSG_INST="Make_install"
+MSG_ERR="Se ha producido un error"
+MSG_TIME="Tiempo de instalación"
+export MSG_CONF MSG_MAKE MSG_CHK MSG_INST MSG_ERR MSG_TIME
+
+#--Variables para los registros--------------------
+DIR_FUENTES="$CLFS/sources"
+FILE_BITACORA="$srcdir/registros/reg_instal.log"
+FILE_CHECKS="$srcdir/registros/test.log"
+export DIR_FUENTES FILE_BITACORA FILE_CHECKS
+
+#--Variables de compilación
+CLFS_HOST="x86_64-cross-linux-gnu"
+CLFS_TARGET="x86_64-unknown-linux-gnu"
+CLFS_TARGET32="i686-pc-linux-gnu"
+export CLFS_HOST CLFS_TARGET CLFS_TARGET32
+
+BUILD32="-m32"
+BUILD64="-m64"
+export BUILD32 BUILD64
+
+MAKEFLAGS='-j 4'
+export MAKEFLAGS
+

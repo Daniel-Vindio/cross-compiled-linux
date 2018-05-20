@@ -1,0 +1,21 @@
+# This set of variables is only to be used during the compiling of a
+# minimun operanting system. That system is generated to chroot, creating
+# in this way a safe environment for cross-compiling.
+
+#This set of variables can be used ONLY after building the cross-tools
+echo -e "
+############################################################\n\
+#  Usar SOLO despues de haber acabado con cross-tools      #\n\
+#  used ONLY after building the cross-tool                 #\n\
+############################################################\n"
+
+#=================Variables para los instaladores=======================
+#--Variables de compilación
+CC="${CLFS_TARGET}-gcc ${BUILD64}"
+CXX="${CLFS_TARGET}-g++ ${BUILD64}"
+AR="${CLFS_TARGET}-ar"
+AS="${CLFS_TARGET}-as"
+RANLIB="${CLFS_TARGET}-ranlib"
+LD="${CLFS_TARGET}-ld"
+STRIP="${CLFS_TARGET}-strip"
+export CC CXX AR AS RANLIB LD STRIP

@@ -1,0 +1,56 @@
+#This set of variables can be used ONLY in chroot mode
+
+echo -e "
+############################################################\n\
+#  Usar SOLO para Part V. Building the CLFS System         #\n\
+#  used ONLY Part V. Building the CLFS System              #\n\
+#                                                          #\n\
+#  requiere chroot !!!    chroot rquired !!!               #\n\
+############################################################\n"
+echo -e "
+############################################################\n\
+# $0\n\
+############################################################\n"
+
+# Ojo, está vinculado con 0-var-general-rc
+
+set +h
+#set +h is needed because chroot is entered through 3-meta-inst-basic-system
+#and the original uses /tools/bin/bash --login +h <--- thus, +h is needed.
+
+croothome="/home"
+chrootqipkgs="/qipkgs"
+export croothome chrootqipkgs
+
+
+#=================Variables para los instaladores=======================
+#--Variables para mensajes
+MSG_CONF="Configure"
+MSG_MAKE="Make"
+MSG_CHK="Check"
+MSG_INST="Make_install"
+MSG_ERR="Se ha producido un error"
+MSG_TIME="Tiempo de instalación"
+export MSG_CONF MSG_MAKE MSG_CHK MSG_INST MSG_ERR MSG_TIME
+
+#--Variables para los registros
+DIR_FUENTES="/sources"
+FILE_BITACORA="$croothome/reg_instal.log"
+FILE_CHECKS="$croothome/test.log"
+export DIR_FUENTES FILE_BITACORA FILE_CHECKS
+
+#--Variables de compilación
+CLFS_TARGET32="i686-pc-linux-gnu"
+export CLFS_TARGET32
+
+BUILD32="-m32"
+BUILD64="-m64"
+export BUILD32 BUILD64
+
+MAKEFLAGS='-j 4'
+export MAKEFLAGS
+
+
+
+
+
