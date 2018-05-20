@@ -1,0 +1,29 @@
+--- Makefile.orig	2018-03-29 20:50:19.205069766 +0000
++++ Makefile	2018-03-29 20:53:12.249938304 +0000
+@@ -115,19 +115,19 @@
+ 
+ blocksort.o: blocksort.c
+ 	@cat words0
+-	$(CC) $(CFLAGS) -c blocksort.c
++	$(CC) $(CFLAGS) -DBZ_NO_STDIO -c blocksort.c
+ huffman.o: huffman.c
+-	$(CC) $(CFLAGS) -c huffman.c
++	$(CC) $(CFLAGS) -DBZ_NO_STDIO -c huffman.c
+ crctable.o: crctable.c
+-	$(CC) $(CFLAGS) -c crctable.c
++	$(CC) $(CFLAGS) -DBZ_NO_STDIO -c crctable.c
+ randtable.o: randtable.c
+-	$(CC) $(CFLAGS) -c randtable.c
++	$(CC) $(CFLAGS) -DBZ_NO_STDIO -c randtable.c
+ compress.o: compress.c
+-	$(CC) $(CFLAGS) -c compress.c
++	$(CC) $(CFLAGS) -DBZ_NO_STDIO -c compress.c
+ decompress.o: decompress.c
+-	$(CC) $(CFLAGS) -c decompress.c
++	$(CC) $(CFLAGS) -DBZ_NO_STDIO -c decompress.c
+ bzlib.o: bzlib.c
+-	$(CC) $(CFLAGS) -c bzlib.c
++	$(CC) $(CFLAGS) -DBZ_NO_STDIO -c bzlib.c
+ bzip2.o: bzip2.c
+ 	$(CC) $(CFLAGS) -c bzip2.c
+ bzip2recover.o: bzip2recover.c

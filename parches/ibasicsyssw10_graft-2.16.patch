@@ -1,0 +1,38 @@
+--- Makefile.dist.orig	2018-04-21 10:16:05.676128848 +0200
++++ Makefile.dist	2018-04-21 10:20:00.408134859 +0200
+@@ -30,8 +30,8 @@
+ # number of ways. See the man page and the documentation in
+ # doc/graft.{html,pdf,txt}.
+ 
+-PACKAGEDIR	= /usr/local/pkgs
+-TARGETDIR	= /usr/local
++PACKAGEDIR	= /usr/pkgs
++TARGETDIR	= /usr
+ 
+ # You should only need to change the value of TOP to reflect the
+ # installation directory for graft if it is different from your default
+@@ -231,15 +231,15 @@
+ Makefile:	Makefile.dist
+ 		cp Makefile.dist Makefile
+ 		chmod 644 Makefile
+-		@echo
+-		@echo "######################################################"
+-		@echo "#                                                    #"
+-		@echo "#       You'll now need to modify the Makefile       #"
+-		@echo "#      variables to suit your local conditions.      #"
+-		@echo "#                                                    #"
+-		@echo "######################################################"
+-		@echo
+-		@false
++#		@echo
++#		@echo "######################################################"
++#		@echo "#                                                    #"
++#		@echo "#       You'll now need to modify the Makefile       #"
++#		@echo "#      variables to suit your local conditions.      #"
++#		@echo "#                                                    #"
++#		@echo "######################################################"
++#		@echo
++#		@false
+ 
+ deb:		Makefile control
+ 		@rm -rf $(DEBDIR) graft-$(VERSION).deb
