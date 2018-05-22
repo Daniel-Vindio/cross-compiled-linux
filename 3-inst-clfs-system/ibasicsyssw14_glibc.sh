@@ -1,6 +1,6 @@
 # Instalador de glibc 32 Bit
 #10.7. Glibc-2.19 <--- esa era la antigua 32 Bit Libraries
-
+#Se tiene en centa 6.2 de LFS-8.2 
 nombre=$(echo $0 | cut -d "." -f2 | cut -d "_" -f2)
 nombre_comp=$nombre-$1.tar.$2
 nombre_dir=$nombre-$1
@@ -75,18 +75,18 @@ cd $nombre_dir
 #----------------------CONFIGURE - MAKE - MAKE INSTALL------------------
 echo -e "\nInstalacion de $nombre_dir 32 Bit" >> $FILE_BITACORA
 
-LINKER=$(readelf -l /tools/bin/bash | sed -n 's@.*interpret.*/tools\(.*\)]$@\1@p')
-sed -i "s|libs -o|libs -L/usr/lib -Wl,-dynamic-linker=${LINKER} -o|" \
-  scripts/test-installation.pl
-unset LINKER
+#ln -sfv /tools/lib/gcc /usr/lib --->llevar a un script en CLFS no tiene sentido. Ver si tiene sentido en LFS
+#ln -sfv ld-linux.so.2 /lib/ld-lsb.so.3 --->llevar a un script
+#rm -f /usr/include/limits.h --->llevar a un script
+#GCC_INCDIR=/usr/lib/gcc/i686-pc-linux-gnu/$1/include ¿Hará falta?
 
-# scripts/test-installation.pl has been modified to skip nss_test2
-# line 125 add && $name ne "nss_test2". Then tar the modified directory to
-# create a new and modified glibc-2.27.tar.xz
 
-cp -v timezone/Makefile{,.orig}
-sed 's/\\$$(pwd)/`pwd`/' timezone/Makefile.orig > timezone/Makefile
-registro_error "timezone"
+#symlink for LSB compliance
+ln -sfv ld-linux.so.2 /lib/ld-lsb.so.3
+registro_error "ln -sfv ld-linux.so.2 /lib/ld-lsb.so.3"
+
+#rm -f /usr/include/limits.h
+#registro_error "rm -f /usr/include/limits.h"
 
 if [ -d "build" ] ; then
 	rm -rv "build"
@@ -100,35 +100,37 @@ CC="gcc ${BUILD32}" \
 CXX="g++ ${BUILD32}" \
 ../configure \
 --prefix=/usr \
---disable-profile \
+--disable-werror \
 --enable-kernel=4.10 \
+--enable-stack-protector=strong \
 --libexecdir=/usr/lib/glibc \
---host=${CLFS_TARGET32} \
---enable-obsolete-rpc
+--host=${CLFS_TARGET32}
+libc_cv_slibdir=/lib
 registro_error $MSG_CONF
-
-#--enable-obsolete-nsl
-# Causes a making error (not during the testes before installing, but
-# during making) --> I decided not to build obsolete nsl.
-# BUG. scripts/test-installation.pl doesn't detect that obsolete nls are
-# not enabled, and try to test installation of all the -lnss_* and fails
-# I hack line 125 to avoid testing, fixing test-installation.pl in the 
-# tarball source.
 
 make
 registro_error $MSG_MAKE
 
-sed -i '/cross-compiling/s@ifeq@ifneq@g' ../localedata/Makefile
+#sed -i '/cross-compiling/s@ifeq@ifneq@g' ../localedata/Makefile
 #make -k check 2>&1 | tee $FILE_CHECKS; grep Error $FILE_CHECKS
 
-touch /etc/ld.so.conf
-registro_error "touch /etc/ld.so.conf"
+#touch /etc/ld.so.conf
+#registro_error "touch /etc/ld.so.conf"
+
+sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
+registro_error "sed '/test-installation/s"
 
 make install
 registro_error "make install"
 
-rm -v /usr/include/rpcsvc/*.x
-registro_error "rm -v /usr/include/rpcsvc/*.x"
+#rm -v /usr/include/rpcsvc/*.x
+#registro_error "rm -v /usr/include/rpcsvc/*.x"
+
+##llevar a un script
+##cp -v ../nscd/nscd.conf /etc/nscd.conf
+##mkdir -pv /var/cache/nscd
+
+##llevar a un script los locales y la configuración
 
 ######------------------------------------------------------------------
 
@@ -138,64 +140,3 @@ rm -rf $nombre_dir && echo "Borrado el directorio $nombre_dir"
 #Registro de tiempos de ejecución
 T_FINAL=$(date +"%T")
 echo "$(date) $nombre <$MSG_TIME> $T_COMIENZO $T_FINAL" >> $FILE_BITACORA
-
-
-# List of library names according to the book
-#ld
-#libBrokenLocale
-#libSegFault
-#libanl
-#libc
-#libc_nonshared
-#libcidn
-#libcrypt
-#libdl
-#libg
-#libieee *** It dosnt exist in Glibc 2-27
-#libm
-#libmcheck
-#libmemusage
-#libnsl
-#libnss_compat
-#libnss_dns
-#libnss_files
-#libnss_hesiod
-#libnss_nis
-#libnss_nisplus
-#libpcprofile
-#libpthread
-#libpthread_nonshared
-#libresolv
-#librpcsvc
-#librt
-#libthread_db
-#libutil
-
-#Según soversion.mk
-#ld
-#libc
-#libnss_nis
-#libBrokenLocale
-#libpthread
-#libthread_db
-#libnss_nisplus
-#libcrypt
-#libdl
-#libgcc_s
-#libcidn
-#libnss_test1
-#libnsl
-#libutil
-#libnss_ldap
-#libnss_test2
-#libnss_dns
-#libnss_compat
-#libmvec
-#libresolv
-#libnss_db
-#libm
-#libnss_files
-#librt
-#libnss_hesiod
-#libanl
-
