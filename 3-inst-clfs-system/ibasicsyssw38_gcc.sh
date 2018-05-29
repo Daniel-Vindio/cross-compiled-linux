@@ -76,9 +76,6 @@ cd $nombre_dir
 
 echo -e "\nInstalacion de $nombre_dir 64 bit on 64 bit machine, MULTILIB." >> $FILE_BITACORA
 
-sed -i 's@\./fixinc\.sh@-c true@' gcc/Makefile.in
-registro_error "sed -i 's@\...."
-
 if [ -d "build" ] ; then
 	rm -rv "build"
 fi
@@ -94,14 +91,9 @@ LDFLAGS="-Wl,-rpath-link,/usr/lib64:/lib64:/usr/lib:/lib" \
 --prefix=/usr \
 --libdir=/usr/lib64 \
 --libexecdir=/usr/lib64 \
---enable-threads=posix \
---enable-__cxa_atexit \
---enable-clocale=gnu \
 --enable-languages=c,c++ \
---disable-libstdcxx-pch \
---with-system-zlib \
---enable-checking=release \
---enable-libstdcxx-time
+--disable-bootstrap \
+--with-system-zlib
 registro_error $MSG_CONF
 
 make
@@ -114,41 +106,36 @@ registro_error $MSG_MAKE
 make install
 registro_error $MSG_INST
 
-#Seems to be an obsolete requirement.
+##Seems to be an obsolete requirement.
 ##cp -v ../gcc-4.8.3/include/libiberty.h /usr/include
 ##cp -v ../include/libiberty.h /usr/include
 ##registro_error "cp -v ../include/libiberty.h /usr/include"
 
-ln -sv ../usr/bin/cpp /lib
-registro_error "ln -sv /usr/bin/cpp /lib"
+ln -sv ../usr/bin/cpp /lib64
+registro_error "ln -sv /usr/bin/cpp /lib64"
 
 ln -sv gcc /usr/bin/cc
 registro_error "ln -sv gcc /usr/bin/cc"
 
-install -v -dm755 /usr/lib/bfd-plugins
+install -v -dm755 /usr/lib64/bfd-plugins
 registro_error "install -v -dm755 /usr/lib/bfd-plugins"
 
-ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/$1/liblto_plugin.so /usr/lib/bfd-plugins/
+ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/$1/liblto_plugin.so /usr/lib64/bfd-plugins/
 registro_error "ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/$1/"
 
-mkdir -pv /usr/share/gdb/auto-load/usr/lib
+mkdir -pv /usr/share/gdb/auto-load/usr/lib64
 registro_error "mkdir -pv /usr/share/gdb/auto-load/usr/lib"
 
-mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib
+mv -v /usr/lib64/*gdb.py /usr/share/gdb/auto-load/usr/lib64
 registro_error "mv -v /usr/lib/*gdb.py /usr/share/gdb/----"
 
 ######------------------------------------------------------------------
 
 cd ../..
-#rm -rf $nombre_dir && echo "Borrado el directorio $nombre_dir"
+rm -rf $nombre_dir && echo "Borrado el directorio $nombre_dir"
 
 
 #Registro de tiempos de ejecución
 T_FINAL=$(date +"%T")
 echo "$(date) $nombre <$MSG_TIME> $T_COMIENZO $T_FINAL" >> $FILE_BITACORA
-
-
-
-
-
 
