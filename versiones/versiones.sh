@@ -31,7 +31,7 @@ fi
 paquetes="PRUEBA binutils bash bison bzip2 check cloog coreutils dejagnu \
 diffutils expect file findutils gawk gcc gettext glibc gmp graft grep \
 gzip isl linux lzip m4 make man_pages mpc mpfr ncurses patch perl pkg \
-qi sed tar tcl texinfo unzip util_linux vim xz zlib flex"
+qi sed tar tcl texinfo unzip util_linux vim xz zlib flex readline"
 
 VER_PRUEBA="prueba_ok"
 VER_binutils="2.30"
@@ -81,7 +81,7 @@ VER_graft="2.16"
 VER_qi="1.0-rc24"
 VER_man_pages="4.15" 	#man-pages En instalador bien
 VER_flex="2.6.4"
-
+VER_readline="7.0"
 
 for i in $paquetes; do
 	export VER_$i
