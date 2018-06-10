@@ -1,0 +1,55 @@
+program="file"
+version="$VER_file"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.xz
+
+description="
+
+zlib is designed to be a free, general-purpose, legally unencumbered 
+-- that is, not covered by any patents -- lossless data-compression 
+library for use on virtually any computer hardware and operating system. 
+The zlib data format is itself portable across platforms. Unlike the LZW 
+compression method used in Unix compress(1) and in the GIF image format, 
+the compression method currently used in zlib essentially never expands 
+the data. (LZW can double or triple the file size in extreme cases.) 
+zlib's memory footprint is also independent of the input data and can 
+be reduced, if necessary, at some cost in compression. A more precise, 
+technical discussion of both points is available on another page. 
+
+---
+"
+
+build() {
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\nReceta QI de $nombre_dir 32 bit" >> $FILE_BITACORA
+
+CC="gcc ${BUILD32}" \
+./configure \
+--prefix=/usr
+registro_error $MSG_CONF
+
+make
+registro_error $MSG_MAKE
+
+#make check 2>&1 | tee $FILE_CHECKS
+
+make install DESTDIR=${destdir}
+registro_error $MSG_INST
+
+}
+
+
+
+
+
+
+
+
+
+
+
