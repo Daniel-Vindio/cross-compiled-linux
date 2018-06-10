@@ -1,5 +1,5 @@
 program="zlib"
-version="1.2.11"
+version="$VER_zlib"
 release="1"
 arch="i686"
 
@@ -23,8 +23,6 @@ technical discussion of both points is available on another page.
 
 build() {
 
-. /home/0-variables-build-flags
-
 unpack "${tardir}/$tarname"
 cd "$srcdir"
 
@@ -44,7 +42,7 @@ mkdir -pv ${destdir}/lib
 
 mv -v ${destdir}/usr/lib/libz.so.* ${destdir}/lib
 
-ln -sfv ../../lib/$(readlink ${destdir}/usr/lib/libz.so) ${destdir}/usr/lib/libz.so
+ln -sfv ${destdir}/../../lib/$(readlink ${destdir}/usr/lib/libz.so) ${destdir}/usr/lib/libz.so
 
 #Resultado:
 #renamed '/usr/src/qi/build/package-zlib/usr/lib/libz.so.1' -> '/usr/src/qi/build/package-zlib/lib/libz.so.1'
