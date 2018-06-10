@@ -129,9 +129,41 @@ control_flujo () {
 
 ##./ibasicsyssw37_gcc.sh $VER_gcc gz Solo para qi TO-DO
 ./ibasicsyssw38_gcc.sh $VER_gcc gz 
-
 ./ibasicsyssw39_gcctest.sh
+./ibasicsyssw40_wrapper.sh
+
+##Hasta aquí es
+##V. Building the CLFS System
+##10. Installing Basic System Software
+##10.28 gcc
+##A partir de aquí se seguirá la estructura de LFS 8.2
+##III. Building the LFS System
+##6. Installing Basic System Software
+##(ya estará hecho Adjusting the Toolchain) seguir con 6.11 en adelante
+
 #control_flujo
+./ibasicsyssw41_file.sh $VER_file gz
+./ibasicsyssw42_file.sh $VER_file gz
+
+##Siguiente según LFS, readline, sin embargo, por una cuestión de dependencias
+##parece adecuado seguir con el orden de CLFS hasta Ncurses.
+
+#No hay Sed para 32 bit sobre 64. Dejo el espacio para mantener las numeraciones
+#impares para 32 bit.
+#ibasicsyssw43_sed
+./ibasicsyssw44_sed.sh $VER_sed xz
+
+#ibasicsyssw45_pkg-config-lite
+./ibasicsyssw46_pkg-config-lite.sh $VER_pkg gz
+
+./ibasicsyssw47_ncurses.sh $VER_ncurses gz
+./ibasicsyssw48_ncurses.sh $VER_ncurses gz
+
+./ibasicsyssw49_readline.sh $VER_readline gz
+./ibasicsyssw50_readline.sh $VER_readline gz
+
+#ibasicsyssw51_bc
+./ibasicsyssw52_bc.sh $VER_bc gz
 
 
 echo -e "
