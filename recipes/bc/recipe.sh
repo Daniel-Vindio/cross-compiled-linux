@@ -1,0 +1,67 @@
+program="bc"
+version="$VER_bc"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.gz
+
+description="
+
+bc is an arbitrary precision numeric processing language. Syntax is 
+similar to C, but differs in many substantial areas. It supports 
+interactive execution of statements. bc is a utility included in the 
+POSIX P1003.2/D11 draft standard.  
+---
+"
+
+build() {
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi para 32 bit" >> $FILE_BITACORA
+
+cat > bc/fix-libmath_h << "EOF"
+#! /bin/bash
+sed -e '1 s/^/{"/' 		\
+	-e 's/$/",/' 		\
+	-e '2,$ s/^/"/' 	\
+	-e '$ d' 			\
+	-i libmath.h
+
+sed -e '$ s/$/0}/' \
+	-i libmath.h
+EOF
+registro_error "cat > bc/fix-libmath_h"
+
+sed -i -e '/flex/s/as_fn_error/: ;; # &/' configure
+registro_error "sed de configure"
+
+CC="gcc ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--with-readline \
+--mandir=/usr/share/man \
+--infodir=/usr/share/info
+registro_error $MSG_CONF
+
+make
+registro_error $MSG_MAKE
+
+echo "quit" | ./bc/bc -l Test/checklib.b | tee $FILE_CHECKS
+
+make install DESTDIR=${destdir}
+registro_error $MSG_INST
+
+}
+
+
+
+
+
+
+
+
+
+
+
