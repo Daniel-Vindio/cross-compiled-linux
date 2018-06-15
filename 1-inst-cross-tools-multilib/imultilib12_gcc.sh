@@ -118,9 +118,7 @@ AR=ar LDFLAGS="-Wl,-rpath,/cross-tools/lib" \
 --with-native-system-header-dir=/tools/include \
 --with-mpfr=/cross-tools \
 --with-gmp=/cross-tools \
---with-cloog=/cross-tools \
 --with-mpc=/cross-tools \
---with-isl=/cross-tools \
 --without-headers \
 --with-newlib \
 --disable-nls \
@@ -140,6 +138,8 @@ AR=ar LDFLAGS="-Wl,-rpath,/cross-tools/lib" \
 --enable-checking=release
 registro_error $MSG_CONF
 
+#--with-cloog=/cross-tools \
+#--with-isl=/cross-tools \
 # --disable-multilib \
 
 make all-gcc all-target-libgcc

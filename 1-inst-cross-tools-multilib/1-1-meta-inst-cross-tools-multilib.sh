@@ -19,8 +19,8 @@ echo -e "
 ./imultilib6_gmp.sh 		$VER_gmp 	xz
 ./imultilib7_mpfr.sh 		$VER_mpfr 	xz
 ./imultilib8_mpc.sh 		$VER_mpc 	gz
-./imultilib9_isl.sh 		$VER_isl 	gz
-./imultilib10_cloog.sh 		$VER_cloog 	gz
+#./imultilib9_isl.sh 		$VER_isl 	gz
+#./imultilib10_cloog.sh 		$VER_cloog 	gz
 ./imultilib11_binutils.sh 	$VER_binutils gz
 ./imultilib12_gcc.sh		$VER_gcc	gz
 ./imultilib13_glibc.sh 		$VER_glibc	xz

@@ -115,8 +115,6 @@ AR=ar LDFLAGS="-Wl,-rpath,/cross-tools/lib" \
 --with-mpc=/cross-tools \
 --with-mpfr=/cross-tools \
 --with-gmp=/cross-tools \
---with-cloog=/cross-tools \
---with-isl=/cross-tools \
 --disable-nls \
 --disable-static \
 --enable-languages=c,c++ \
@@ -127,6 +125,9 @@ AR=ar LDFLAGS="-Wl,-rpath,/cross-tools/lib" \
 --enable-libstdcxx-time
 registro_error $MSG_CONF
 
+
+#--with-cloog=/cross-tools \
+#--with-isl=/cross-tools \
 
 make AS_FOR_TARGET="${CLFS_TARGET}-as" LD_FOR_TARGET="${CLFS_TARGET}-ld"
 registro_error $MSG_MAKE
