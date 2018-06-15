@@ -88,6 +88,12 @@ registro_error "ln -sfv ld-linux.so.2 /lib/ld-lsb.so.3"
 #rm -f /usr/include/limits.h
 #registro_error "rm -f /usr/include/limits.h"
 
+if [ -f /usr/include/limits.h ] ; then
+	rm -f /usr/include/limits.h
+	registro_error "rm -f /usr/include/limits.h"
+fi
+
+
 if [ -d "build" ] ; then
 	rm -rv "build"
 fi

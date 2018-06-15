@@ -75,18 +75,27 @@ cd $nombre_dir
 #----------------------CONFIGURE - MAKE - MAKE INSTALL------------------
 echo -e "\nInstalacion de $nombre_dir 64 Bit" >> $FILE_BITACORA
 
-LINKER=$(readelf -l /tools/bin/bash | sed -n 's@.*interpret.*/tools\(.*\)]$@\1@p')
-sed -i "s|libs -o|libs -L/usr/lib64 -Wl,-dynamic-linker=${LINKER} -o|" \
-  scripts/test-installation.pl
-unset LINKER
-registro_error "Sed test-installation.pl 1"
+#LINKER=$(readelf -l /tools/bin/bash | sed -n 's@.*interpret.*/tools\(.*\)]$@\1@p')
+#sed -i "s|libs -o|libs -L/usr/lib64 -Wl,-dynamic-linker=${LINKER} -o|" \
+#  scripts/test-installation.pl
+#unset LINKER
+#registro_error "Sed test-installation.pl 1"
 
 # scripts/test-installation.pl has been modified to skip nss_test2
 # line 125 add && $name ne "nss_test2". Then tar the modified directory to
 # create a new and modified glibc-2.27.tar.xz
 
-sed -i 's/\\$$(pwd)/`pwd`/' timezone/Makefile
-registro_error "timezone"
+#sed -i 's/\\$$(pwd)/`pwd`/' timezone/Makefile
+#registro_error "timezone"
+
+#symlink for LSB compliance
+ln -sfv ld-linux.so.2 /lib64/ld-lsb.so.3
+registro_error "ln -sfv ld-linux.so.2 /lib/ld-lsb.so.3"
+
+if [ -f /usr/include/limits.h ] ; then
+	rm -f /usr/include/limits.h
+	registro_error "rm -f /usr/include/limits.h"
+fi
 
 if [ -d "build" ] ; then
 	rm -rv "build"
@@ -96,19 +105,24 @@ mkdir build
 registro_error "mkdir build"
 cd build
 
-echo "slibdir=/lib64" >> configparms
-registro_error "slibdir=/lib64 >> configparms"
+#echo "slibdir=/lib64" >> configparms
+#registro_error "slibdir=/lib64 >> configparms"
+#poner como libc_cv_slibdir=/lib64 en el configure
 
 CC="gcc ${BUILD64}" \
 CXX="g++ ${BUILD64}" \
 ../configure \
 --prefix=/usr \
---disable-profile \
+--disable-werror \
 --enable-kernel=4.10 \
+--enable-stack-protector=strong \
 --libexecdir=/usr/lib64/glibc \
---libdir=/usr/lib64 \
---enable-obsolete-rpc
+--libdir=/usr/lib64
+libc_cv_slibdir=/lib64
 registro_error $MSG_CONF
+
+
+#--disable-profile \
 
 #--enable-obsolete-nsl
 # Causes a making error (not during the testes before installing, but
@@ -121,13 +135,17 @@ registro_error $MSG_CONF
 make
 registro_error $MSG_MAKE
 
+#sed -i '/cross-compiling/s@ifeq@ifneq@g' ../localedata/Makefile
 #make -k check 2>&1 | tee $FILE_CHECKS; grep Error $FILE_CHECKS
+
+sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
+registro_error "sed '/test-installation/s"
 
 make install
 registro_error $MSG_INST
 
-rm -v /usr/include/rpcsvc/*.x
-registro_error "rm -v /usr/include/rpcsvc/*.x"
+#rm -v /usr/include/rpcsvc/*.x
+#registro_error "rm -v /usr/include/rpcsvc/*.x"
 
 cp -v ../nscd/nscd.conf /etc/nscd.conf
 registro_error "cp -v ../nscd/nscd.conf /etc/nscd.conf"

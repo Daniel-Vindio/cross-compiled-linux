@@ -109,11 +109,11 @@ control_flujo () {
 ./ibasicsyssw23_mpc.sh $VER_mpc gz
 ./ibasicsyssw24_mpc.sh $VER_mpc gz
 
-./ibasicsyssw25_isl.sh $VER_isl gz
-./ibasicsyssw26_isl.sh $VER_isl gz
+#./ibasicsyssw25_isl.sh $VER_isl gz
+#./ibasicsyssw26_isl.sh $VER_isl gz
 
-./ibasicsyssw27_cloog.sh $VER_cloog gz
-./ibasicsyssw28_cloog.sh $VER_cloog gz
+#./ibasicsyssw27_cloog.sh $VER_cloog gz
+#./ibasicsyssw28_cloog.sh $VER_cloog gz
 
 ./ibasicsyssw29_zlib.sh $VER_zlib xz
 ./ibasicsyssw30_zlib.sh $VER_zlib xz
@@ -164,6 +164,10 @@ control_flujo () {
 
 #ibasicsyssw51_bc
 ./ibasicsyssw52_bc.sh $VER_bc gz
+
+#Al instalar el paquete en la host, le faltan las librerías de Flex.
+#Construir paquete flex. La build ya tiene las librerías de 32 y 64
+#por eso no dio problemas para construir bc en la build.
 
 
 echo -e "
