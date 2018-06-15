@@ -1,9 +1,9 @@
-program="zlib"
-version="$VER_zlib"
+program="file"
+version="$VER_file"
 release="1"
 arch="i686"
 
-tarname=${program}-${version}.tar.xz
+tarname=${program}-${version}.tar.gz
 
 description="
 
@@ -26,28 +26,20 @@ build() {
 unpack "${tardir}/$tarname"
 cd "$srcdir"
 
+echo -e "\nReceta QI de $nombre_dir 32 bit" >> $FILE_BITACORA
+
 CC="gcc ${BUILD32}" \
-CXX="g++ ${BUILD32}" \
-LDFLAGS="-Wl,-rpath-link,/usr/lib:/lib ${BUILD32}" \
 ./configure \
 --prefix=/usr
+registro_error $MSG_CONF
 
 make
+registro_error $MSG_MAKE
+
+#make check 2>&1 | tee $FILE_CHECKS
 
 make install DESTDIR=${destdir}
-
-#Hay que añadir este mkdir para evitar este error
-#mv: target '/usr/src/qi/build/package-zlib/lib' is not a directory
-mkdir -pv ${destdir}/lib
-
-mv -v ${destdir}/usr/lib/libz.so.* ${destdir}/lib
-
-ln -sfv ${destdir}/../../lib/$(readlink ${destdir}/usr/lib/libz.so) ${destdir}/usr/lib/libz.so
-
-#Resultado:
-#renamed '/usr/src/qi/build/package-zlib/usr/lib/libz.so.1' -> '/usr/src/qi/build/package-zlib/lib/libz.so.1'
-#renamed '/usr/src/qi/build/package-zlib/usr/lib/libz.so.1.2.11' -> '/usr/src/qi/build/package-zlib/lib/libz.so.1.2.11'
-#'/usr/src/qi/build/package-zlib/usr/lib/libz.so' -> '../../lib/libz.so.1.2.11'
+registro_error $MSG_INST
 
 }
 

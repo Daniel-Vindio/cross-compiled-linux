@@ -1,0 +1,66 @@
+program="gcc"
+version="$VER_gcc"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.gz
+
+description="
+
+The GNU Compiler Collection includes front ends for C, C++, Objective-C, 
+Fortran, Ada, and Go, as well as libraries for these languages 
+(libstdc++,...). GCC was originally written as the compiler for the GNU 
+operating system. The GNU system was developed to be 100% free 
+software, free in the sense that it respects the user's freedom.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+mkdir -v build
+cd build
+
+cp -v /usr/include/limits.h /usr/include/limits.h-original
+
+SED=sed CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+LDFLAGS="-Wl,-rpath-link,/usr/lib:/lib ${BUILD32}" \
+../configure \
+--prefix=/usr \
+--enable-languages=c,c++ \
+--disable-multilib \
+--disable-bootstrap \
+--with-system-zlib
+
+
+make
+
+#ulimit -s 32768
+#make -k check 2>&1 | tee $FILE_CHECKS
+#../contrib/test_summary
+
+make install DESTDIR=${destdir}
+registro_error $MSG_INST
+
+rm -vf /usr/include/limits.h
+mv -v /usr/include/limits.h-original /usr/include/limits.h
+
+}
+
+
+
+
+
+
+
+
+
+
+

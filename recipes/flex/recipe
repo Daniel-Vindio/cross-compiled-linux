@@ -1,5 +1,5 @@
 program="flex"
-version="2.6.4"
+version="$VER_flex"
 release="1"
 arch="i686"
 
@@ -16,18 +16,31 @@ lexical patterns in text.
 
 build() {
 
-. /home/0-variables-build-flags
-
 unpack "${tardir}/$tarname"
 cd "$srcdir"
 
+echo -e "\n Creación paquete $program Qi para 32 bit" >> $FILE_BITACORA
+
+#Esto era para un error con Glibc-2.26. Ahora uso la 2-27. No aplica.
+#sed -i "/math.h/a #include <malloc.h>" src/flexdef.h
+
 CC="gcc ${BUILD32}" \
+HELP2MAN=/tools/bin/true \
 ./configure \
---prefix=/usr
+--prefix=/usr \
+--docdir=/usr/share/doc/flex-$VER_flex
+registro_error $MSG_CONF
 
 make
+registro_error $MSG_MAKE
+
+#make check 2>&1 | tee $FILE_CHECKS
 
 make install DESTDIR=${destdir}
+registro_error $MSG_INST
+
+#ln -sv flex /usr/bin/lex
+#Esto tiene que ir en 3-2-meta-qi-...
 
 }
 
