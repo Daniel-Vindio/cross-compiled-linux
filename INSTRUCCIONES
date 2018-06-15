@@ -1,0 +1,180 @@
+INSTRUCCIONES PARA GENERAR UN PAQUETE QI
+
+ir a carpeta personal del usuario clfs - cross-compilador-dev
+cd /home/clfs/cross-compilador-dev
+(o abrir allí una consola)
+sudo su
+./chroot-empiece.sh
+alias ls='ls --color'
+cd /home
+. 0-var-chroot-rc
+. versiones.sh
+
+ Voy al libro LFS
+ 6.13. Readline-7.0 (por ejemplo)
+ Voy a CLFS y localizo la aplicación
+ 10.52. Readline-6.3 32 Bit Libraries
+ 
+ NOTA: He tenido que instalar en it (la build machine 64 bit) ncurses y lo que 
+ ello supone... No creo paquete ncurses para host machine (32 bit)
+ 
+ Preparación de los instaladores para i7 (el cross-compiler o build machine 64 bit)
+ Podría simplemente intentar generar el paquete qi sin instalarlo en i7
+ pero eso seguramente cree un problema. Si no se instalan las librerías
+ en 32 y 64 bit ¿sigientes porgramas cómo encontrarán en el sistema las
+ librerías dinámicas a las que unirse?.
+ Si los instalo, además se va generando un sistema de 64 bit clón del que
+ se va preparando a la vez con paquetes qi de 32 bit.
+ 
+ En la carpeta 3-inst-clfs-system de cross-compilador-dev
+ Genero una plantilla de instalador a partir de una existente.
+ copio - pego - renombro ibasicsyssw41_file (copia).sh siguiendo el orden.
+ Se llamará ibasicsyssw49_readline.sh. El nombre es importante, ya que 
+ el instalador lo toma depues de cut el $0...
+ Empiezo con la de 32 bit y esa se usará para luego la de 64 bit.
+ 
+ No me suena tener las fuentes de readline. Comprobar en chroot
+ Se abre una ventana nueva en equipo - mnt- clfs - sources (Es decir se entra
+ por la puerta de atrás en el chroot)
+ No está readline. se descarga en sources mediante wget. Para ello se abre una 
+ consola sobre la ventana de antes, así hereda los permisos de clfs (no de root)
+ La dirección está en all packages del libro LFS
+ Añadir la dirección a la lista del archivo wget-list de de cross-compilador-dev
+ (verificar el md5sum)
+ Ver si hay una versión más actualizada
+ 
+ Añadir a versiones.sh OJO.Está en varioa sitios.
+ 1.- en versiones.sh de versiones de cross-compilador-dev
+ 2.- en /home de chroot
+ 3.- en LFS-dev -- versiones
+ 4.- en el chroot de la máquina en la que se instale el paquete (importa menos)
+ confirmar nombre y estructura del tarball (importante para que los descompresores
+ funcionen). Para ello descomprimier el tarball y ver cómo se llama realmente 
+ la carpeta de dentro (generalmente coinicide con el de fuera)
+ 
+ Añadir el nuevo nombre al final de paquetes=" ------- xx"
+ Añadir la etiqueta VER_readline="7.0"
+ No escribir, sino copiar pegar
+ 
+ Seguimios con los instaladores
+ (Ahora viene el trabajo chungo de análisis...)
+ Redefinir condiciones del gcc, configures, alinear CLFS con LFS etc.
+ 
+ Reviso el configure de CLFS. Hace falta empezar con eso ya que ahí están
+ las instrucciones para la cross-comp CC="gcc ${BUILD32}" CXX="g++ ${BUILD32}"
+ (le decimos a gcc que es m32)
+ - Ordenar y poner los saltos de linea como me gusta a mí, uno por uno en cada linea
+ - ir copiando lineas y añadiendo registro_error "descripción"
+
+Cotejar con LFS
+- añadir o quitar los --enable --disable etc que no te parezcan bien
+
+
+Se revisa bien todo, y se da por terminado el ibasicsyssw49_readline.sh.
+Se edita a 3-meta-inst-basic-system.sh para añadir:
+
+./ibasicsyssw49_readline.sh $VER_readline gz
+
+para la etiqueta de versión, hay que consultar en versiones.sh 
+(copiar etiqueta "VER_readline" no olvidar poner $)
+para la extensión del tar. Ver equipo - mnt - clfs - sources
+
+Ir a la consola del chroot
+chr-root [ /home ]# 
+verificar si se han cargado como source (. ) las variables y versiones
+(reverse-i-search)`. ': . versiones.sh
+chr-root [ /home ]# . 0-var-chroot-rc
+
+copiar y pegar en chr-root [ /home ]#, ./ibasicsyssw49_readline.sh $VER_readline gz
+(De esta forma se asegura que en el automatismo solo se meten sentencias
+que funcionen.
+
+Ahora genero ./ibasicsyssw50_readline.sh
+Copiar - pegar el 49 y renombrar con 50
+Editar con geany.
+Cambiar 32 por 64 en los comentarios
+revisar los /lib, por /lib64
+etc.
+
+Añadir en 3-meta-inst-basic-system.sh
+./ibasicsyssw50_readline.sh $VER_readline gz
+
+llevar desde 3-inst-clfs-system al /home del chroot el archivo 
+(copiar pear desde las ventanas, no hace falta por consola)
+ibasicsyssw50_readline.sh
+
+ejecutar en la consola del chroot
+./ibasicsyssw50_readline.sh $VER_readline gz
+
+Se revisa: /mnt/clfs/home/reg_instal.log
+(El registro de instalación que está en el home del chroot)
+En cualquier caso, como usa la opción bash -e, se sale de la istlación
+si se detecta error.
+
+Ahora la receta para generar el paquete qi.
+crear caarpeta para la receta
+/home/clfs/cross-compilador-dev/recipes/0-revisado/readline
+De momento ahí. Luego habrá que llevarla al chroot, a un sitio
+donde qi lo detecte automáticamente.
+crear en la carpeta un archivo llamado recipe.sh
+OJO solo recipe. El sh es transitorio y lo uso para que se vea mejor
+el códgo. En la ubicación final hay que quitarlo, ya que con sh no funciona.
+(Se puede reutilizar una plantilla existente)
+
+Se revisa esto
+program="readline"
+version="$VER_readline" --> una forma de automatizar. Ojo que habrá que . versiones.sh
+release="1"
+arch="i686"
+
+se lleva la carpeta al chroot
+/mnt/clfs/usr/src/qi/recipes/readline
+(quitar el .sh de la receta)
+
+qi -b readline
+
+Ajustar la receta si hace falta.
+Llevar la receta definitiva a:
+/home/clfs/cross-compilador-dev/recipes
+
+El paquete generado está en el chroot:
+/mnt/clfs/qipkgs
+
+A pertir de ahí, hay que probarlo en la host etc.
+
+Otro ejemplo.
+LFS 6.14. M4-1.4.18
+en CLFS 10.10. M4-1.4.17.
+Ya está en la build machine i7. Solo hay que compilar el paquete.
+
+Se entra en chroot, como se ha dicho antes.
+Hay que preparar la receta.
+en la build machine, /home/clfs/cross-compilador-dev/recipes
+crear carpeta para m4 y meter una plantilla de receta
+
+verificar nombre viendo el tarball en sources.
+Verificar tipo xz o gz etc.
+Buscar descripción en la págna web de la aplicación
+
+Análisis del configure.
+De CLFS.
+Hace falta indicar el ${BUILD32}
+CC="gcc ${BUILD32}" 
+
+si embargo, al revisar cómo se construyó en CLFS para la build,
+no hace falta CXX="g++ ${BUILD32}"
+
+ojo al 
+make install DESTDIR=$destdir
+
+Una vez acabado el ./configure etc se lleva al chroot
+/mnt/clfs/usr/src/qi/recipes/m4
+
+
+
+
+
+
+
+
+

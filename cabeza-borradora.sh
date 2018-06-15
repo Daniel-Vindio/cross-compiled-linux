@@ -58,7 +58,7 @@ cd ${CLFS}
 echo -e "\n---> Borrado de carpetas en ${CLFS}"
 ls
 control_flujo
-rm -rf bin etc lib media opt root sbin srv tmp usr boot dev home lib64 mnt proc run sys var
+rm -rf bin etc lib media opt root sbin srv tmp usr boot dev home lib64 mnt proc run sys var qipkgs
 
 
 

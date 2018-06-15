@@ -37,13 +37,13 @@ fi
 # III. Make the Cross-Compile Tools
 # 5. Constructing Cross-Compile Tools
 cd $srcinst1
-#./1-1-meta-inst-cross-tools-multilib.sh
+./1-1-meta-inst-cross-tools-multilib.sh
 
 
 # IV. Building the Basic Tools
 # 6. Constructing a Temporary System
 . $srcdir/0-var-inst-tmp-sys-multilib-rc 
-#.1-2-meta-inst-tmp-sys-multilib.sh
+./1-2-meta-inst-tmp-sys-multilib.sh
 
 
 cd $srcinst2
