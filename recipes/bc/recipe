@@ -50,7 +50,7 @@ registro_error $MSG_MAKE
 
 #echo "quit" | ./bc/bc -l Test/checklib.b | tee $FILE_CHECKS
 
-make install DESTDIR=${destdir}
+make DESTDIR=${destdir} install
 registro_error $MSG_INST
 
 }

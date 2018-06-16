@@ -47,9 +47,9 @@ make html
 
 #make -k check 2>&1 | tee $FILE_CHECKS
 
-make install DESTDIR=${destdir}
+make DESTDIR=${destdir} install
 
-make install-html DESTDIR=${destdir}
+make DESTDIR=${destdir} install-html
 
 }
 

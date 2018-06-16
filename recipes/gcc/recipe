@@ -46,7 +46,7 @@ make
 #make -k check 2>&1 | tee $FILE_CHECKS
 #../contrib/test_summary
 
-make install DESTDIR=${destdir}
+make DESTDIR=${destdir} install
 registro_error $MSG_INST
 
 rm -vf /usr/include/limits.h

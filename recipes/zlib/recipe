@@ -34,29 +34,24 @@ LDFLAGS="-Wl,-rpath-link,/usr/lib:/lib ${BUILD32}" \
 
 make
 
-make install DESTDIR=${destdir}
+make DESTDIR=${destdir} install
 
 #Hay que añadir este mkdir para evitar este error
 #mv: target '/usr/src/qi/build/package-zlib/lib' is not a directory
-mkdir -pv ${destdir}/lib
+#16/06/18
+#En vez de esto, el paquete se construye tal cual. Y luego en destino
+#se hacen los ajustes necesario.
 
-mv -v ${destdir}/usr/lib/libz.so.* ${destdir}/lib
-
-ln -sfv ${destdir}/../../lib/$(readlink ${destdir}/usr/lib/libz.so) ${destdir}/usr/lib/libz.so
-
+#Ahora no hace falta. Vamos a ver qué tal funicona.
+#mkdir -pv ${destdir}/lib
+#mv -v ${destdir}/usr/lib/libz.so.* ${destdir}/lib
+#ln -sfv ${destdir}/../../lib/$(readlink ${destdir}/usr/lib/libz.so) ${destdir}/usr/lib/libz.so
 #Resultado:
 #renamed '/usr/src/qi/build/package-zlib/usr/lib/libz.so.1' -> '/usr/src/qi/build/package-zlib/lib/libz.so.1'
 #renamed '/usr/src/qi/build/package-zlib/usr/lib/libz.so.1.2.11' -> '/usr/src/qi/build/package-zlib/lib/libz.so.1.2.11'
 #'/usr/src/qi/build/package-zlib/usr/lib/libz.so' -> '../../lib/libz.so.1.2.11'
 
 }
-
-
-
-
-
-
-
 
 
 

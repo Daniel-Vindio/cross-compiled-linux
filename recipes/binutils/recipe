@@ -71,7 +71,7 @@ registro_error "make tooldir=/usr"
 
 #make -k check 2>&1 | tee $FILE_CHECKS
 
-make tooldir=/usr install DESTDIR=${destdir}
+make tooldir=/usr DESTDIR=${destdir} install
 registro_error "make tooldir=/usr install DESTDIR=${destdir}"
 
 }

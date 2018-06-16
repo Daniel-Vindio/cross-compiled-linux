@@ -20,6 +20,6 @@ unpack "${tardir}/$tarname"
 
 cd "$srcdir"
 
-make install DESTDIR=$destdir
+make DESTDIR=$destdir install
 
 }

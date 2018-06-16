@@ -29,10 +29,8 @@ cd "$srcdir"
 echo -e "\n Creación paquete Qi para 32 bit" >> $FILE_BITACORA
 
 sed -i '/MV.*old/d' Makefile.in
-registro_error "sed -i '/MV.*old/d' Makefile.in"
-
 sed -i '/{OLDSUFF}/c:' support/shlib-install
-registro_error "sed -i '/{OLDSUFF}/c:' support/shlib-install"
+
 
 CC="gcc ${BUILD32}" \
 CXX="g++ ${BUILD32}" \
@@ -41,15 +39,13 @@ CXX="g++ ${BUILD32}" \
 --libdir=/lib \
 --disable-static \
 --docdir=/usr/share/doc/readline-$VER_readline
-registro_error $MSG_CONF
+
 
 make SHLIB_LIBS="-L/lib -lncursesw"
-registro_error $MSG_MAKE
 #Puede que haya un problema en la host machine, ya que allí lncursesw
 #todavía está en /tools/lib
 
-make SHLIB_LIBS=-lncursesw htmldir=${destdir}/usr/share/doc/readline-$VER_readline install DESTDIR=${destdir}
-registro_error $MSG_INST
+make SHLIB_LIBS=-lncursesw htmldir=${destdir}/usr/share/doc/readline-$VER_readline DESTDIR=${destdir} install
 
 install -v -m644 doc/*.{ps,pdf,html,dvi} ${destdir}/usr/share/doc/readline-$VER_readline
 

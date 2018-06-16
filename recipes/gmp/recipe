@@ -78,10 +78,10 @@ registro_error "make html"
 
 #awk '/# PASS:/{total+=$3} ; END{print total}' $FILE_CHECKS
 
-make install DESTDIR=${destdir}
+make DESTDIR=${destdir} install
 registro_error $MSG_INST
 
-make install-html DESTDIR=${destdir}
+make DESTDIR=${destdir} install-html
 registro_error "make install-html DESTDIR=${destdir}"
 
 }

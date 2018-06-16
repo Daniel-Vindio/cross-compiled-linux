@@ -83,7 +83,7 @@ registro_error $MSG_MAKE
 touch ${destdir}/etc/ld.so.conf
 
 sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
-make install DESTDIR=${destdir}
+make DESTDIR=${destdir} install
 registro_error $MSG_INST
 
 #rm -v ${destdir}/usr/include/rpcsvc/*.x

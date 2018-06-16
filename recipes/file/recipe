@@ -38,7 +38,7 @@ registro_error $MSG_MAKE
 
 #make check 2>&1 | tee $FILE_CHECKS
 
-make install DESTDIR=${destdir}
+make DESTDIR=${destdir} install
 registro_error $MSG_INST
 
 }
