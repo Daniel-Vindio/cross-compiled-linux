@@ -36,11 +36,13 @@ make CC="gcc ${BUILD32}" CXX="g++ ${BUILD32}" check 2>&1 | tee $FILE_CHECKS
 
 make CC="gcc ${BUILD32}" CXX="g++ ${BUILD32}" PREFIX=${destdir}/usr install
 
-#Se instala el paquete en bruto, y luego ya veremos cómo se ajustan los
-#cp y ln
-#cp -v bzip2-shared /bin/bzip2
-#cp -av libbz2.so* /lib64
-#ln -sv ../../lib64/libbz2.so.1.0 /usr/lib64/libbz2.so
+mkdir -vp ${destdir}/bin
+mkdir -vp ${destdir}/lib
+
+cp -v bzip2-shared ${destdir}/bin/bzip2
+cp -av libbz2.so* ${destdir}/lib
+
+#ln -sv ../../lib/libbz2.so.1.0 /usr/lib/libbz2.so
 #rm -v /usr/bin/{bunzip2,bzcat,bzip2}
 #ln-sv bzip2 /bin/bunzip2
 #ln-sv bzip2 /bin/bzcat
