@@ -1,0 +1,101 @@
+program="ncurses"
+version="$VER_ncurses"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.gz
+
+description="
+
+The ncurses (new curses) library is a free software emulation of curses 
+in System V Release 4.0 (SVr4), and more. It uses terminfo format, 
+supports pads and color and multiple highlights and forms characters 
+and function-key mapping, and has all the other SVr4-curses enhancements 
+over BSD curses. SVr4 curses became the basis of X/Open Curses.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+sed -i '/LIBTOOL_INSTALL/d' c++/Makefile.in
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--with-shared \
+--without-debug \
+--enable-widec \
+--enable-pc-files \
+--without-normal \
+--mandir=/usr/share/man
+
+make
+
+make DESTDIR=${destdir} install
+
+mkdir -vp ${destdir}/lib
+mv -v ${destdir}/usr/lib/libncursesw.so.6* ${destdir}/lib
+
+#Se lleva libncursesw.so.6 y libncursesw.so.6.1 de /usr/lib a /lib
+#Y esta es la relación entre ellas.
+#lrwxrwxrwx 1 root root     18 jun 22 19:23 libncursesw.so.6 -> libncursesw.so.6.1
+#-rwxr-xr-x 1 root root 499668 jun 22 19:23 libncursesw.so.6.1 (esta es la biblioteca)
+
+#y en /usr/lib se queda
+#lrwxrwxrwx 1 root root     16 jun 22 19:23 libncursesw.so -> libncursesw.so.6
+#pero libncursesw.so.6 ya no está ahí. Por eso es necesario rehacer el enlace.
+#Pero creo que es más seguro hacerlo en el host
+
+#Hay que hacer esto /usr/lib/libncursesw.so -> /lib/libncursesw.so.6
+
+ln -sfv ../../lib/$(readlink ${destdir}/usr/lib/libncursesw.so) ${destdir}/usr/lib/libncursesw.so
+
+for lib in ncurses form panel menu ; do
+	rm -vf ${destdir}/usr/lib/lib${lib}.so
+	echo "INPUT(-l${lib}w)" > ${destdir}/usr/lib/lib${lib}.so
+	ln -sfv ${lib}w.pc ${destdir}/usr/lib/pkgconfig/${lib}.pc
+done
+
+#lrwxrwxrwx 1 root root   8 Jun 22 18:41 form.pc -> formw.pc
+
+rm -vf ${destdir}/usr/lib/libcursesw.so
+echo "INPUT(-lncursesw)" > ${destdir}/usr/lib/libcursesw.so
+ln -sfv libncurses.so ${destdir}/usr/lib/libcurses.so
+
+mkdir -vp ${destdir}/usr/share/doc/ncurses-$VER_ncurses
+cp -v -R doc/* ${destdir}/usr/share/doc/ncurses-$VER_ncurses
+
+make distclean
+./configure \
+--prefix=/usr \
+--with-shared \
+--without-normal \
+--without-debug \
+--without-cxx-binding \
+--with-abi-version=5
+
+make sources libs
+
+cp -av lib/lib*.so.5* ${destdir}/usr/lib
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
