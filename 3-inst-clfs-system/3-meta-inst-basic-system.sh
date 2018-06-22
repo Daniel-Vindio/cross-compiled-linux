@@ -169,6 +169,17 @@ control_flujo () {
 #Construir paquete flex. La build ya tiene las librerías de 32 y 64
 #por eso no dio problemas para construir bc en la build.
 
+./ibasicsyssw53_bzip2.sh $VER_bzip2 gz
+./ibasicsyssw54_bzip2.sh $VER_bzip2 gz
+#Se genera también paquete qi
+
+#6.24. Attr-2.4.47
+#En CLFS no se instala. Pero voy a instalarlo, a que serán necesarias
+#las librerías.
+./ibasicsyssw55_attr.sh $VER_attr gz
+./ibasicsyssw56_attr.sh $VER_attr gz
+
+
 
 echo -e "
 #############################\n\
