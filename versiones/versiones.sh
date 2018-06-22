@@ -31,7 +31,8 @@ fi
 paquetes="PRUEBA binutils bash bison bzip2 check cloog coreutils dejagnu \
 diffutils expect file findutils gawk gcc gettext glibc gmp graft grep \
 gzip isl linux lzip m4 make man_pages mpc mpfr ncurses patch perl pkg \
-qi sed tar tcl texinfo unzip util_linux vim xz zlib flex readline bc"
+qi sed tar tcl texinfo unzip util_linux vim xz zlib flex readline bc \
+attr"
 
 VER_PRUEBA="prueba_ok"
 VER_binutils="2.30"
@@ -39,14 +40,14 @@ VER_file="5.32"
 #VER_gcc="7.3.0"
 VER_gcc="8.1.0"
 VER_glibc="2.27"
-VER_gmp="6.0.0"		#gmp+mpc+mpfr 6.0.0+1.0.2+3.1.2 funciona
-#VER_gmp="6.1.2"
+#VER_gmp="6.0.0"		#gmp+mpc+mpfr 6.0.0+1.0.2+3.1.2 funciona
+VER_gmp="6.1.2"
 VER_linux="4.16"
 VER_m4="1.4.18"
-VER_mpc="1.0.2"
-#VER_mpc="1.1.0"
-VER_mpfr="3.1.2"
-#VER_mpfr="4.0.1"
+#VER_mpc="1.0.2"
+VER_mpc="1.1.0"
+#VER_mpfr="3.1.2"
+VER_mpfr="4.0.1"
 VER_ncurses="6.1"
 VER_cloog="0.18.4"
 VER_isl="0.18"
@@ -83,6 +84,7 @@ VER_man_pages="4.15" 	#man-pages En instalador bien
 VER_flex="2.6.4"
 VER_readline="7.0"
 VER_bc="1.07.1"
+VER_attr="2.4.48"
 
 for i in $paquetes; do
 	export VER_$i
