@@ -32,7 +32,7 @@ paquetes="PRUEBA binutils bash bison bzip2 check cloog coreutils dejagnu \
 diffutils expect file findutils gawk gcc gettext glibc gmp graft grep \
 gzip isl linux lzip m4 make man_pages mpc mpfr ncurses patch perl pkg \
 qi sed tar tcl texinfo unzip util_linux vim xz zlib flex readline bc \
-attr"
+attr acl"
 
 VER_PRUEBA="prueba_ok"
 VER_binutils="2.30"
@@ -85,6 +85,7 @@ VER_flex="2.6.4"
 VER_readline="7.0"
 VER_bc="1.07.1"
 VER_attr="2.4.48"
+VER_acl="2.2.53"
 
 for i in $paquetes; do
 	export VER_$i
