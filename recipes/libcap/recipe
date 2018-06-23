@@ -1,0 +1,55 @@
+program="libcap"
+version="$VER_libcap"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.xz
+
+description="
+
+The Libcap package implements the user-space interfaces to the 
+POSIX 1003.1e capabilities available in Linux kernels.
+These capabilities are a partitioning of the all powerful root privilege 
+into a set of distinct privileges.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+-------------echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+sed -i '/install.*STALIBNAME/d' libcap/Makefile
+
+CC="gcc ${BUILD32}"
+CXX="g++ ${BUILD32}"
+
+make
+
+make DESTDIR=${destdir} RAISE_SETFCAP=no lib=lib prefix=/usr install
+
+chmod -v 755 ${destdir}/usr/lib/libcap.so
+
+mkdir -vp ${destdir}/lib
+mv -v ${destdir}/usr/lib/libcap.so.* ${destdir}/lib
+
+
+ln -sfv ../../lib/$(readlink ${destdir}/usr/lib/libcap.so) ${destdir}/usr/lib/libcap.so
+
+make DESTDIR=${destdir} install
+}
+
+
+
+
+
+
+
+
+
+
+
