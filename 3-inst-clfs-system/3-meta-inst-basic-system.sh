@@ -186,6 +186,8 @@ control_flujo () {
 
 #6.26. Libcap-2.25
 #Ídem anterior
+./ibasicsyssw59_libcap.sh $VER_libcap xz
+./ibasicsyssw60_libcap.sh $VER_libcap xz
 
 
 
