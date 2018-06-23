@@ -189,6 +189,12 @@ control_flujo () {
 ./ibasicsyssw59_libcap.sh $VER_libcap xz
 ./ibasicsyssw60_libcap.sh $VER_libcap xz
 
+#No se instala Shadow en 64 bit. Solo son porgramas, no contiene bibliotecas
+#Por otro lado, el croos-compiler no está pensado para ser un OS 
+#independiente. No necesita shadow.
+
+#10.80. Psmisc-
+./ibasicsyssw61_psmisc.sh $VER_psmisc xz
 
 
 echo -e "
