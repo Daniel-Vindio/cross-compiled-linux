@@ -1,13 +1,13 @@
-program="bison"
-version="$VER_bison"
+program="iana-etc"
+version="$VER_iana"
 release="1"
 arch="i686"
 
-tarname=${program}-${version}.tar.xz
+tarname=${program}-${version}.tar.bz2
 
 description="
 
-The Bison package contains a parser generator.
+The Iana-Etc package provides data for network services and protocols.
 ---
 "
 
@@ -20,14 +20,7 @@ cd "$srcdir"
 
 echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
 
-CC="gcc ${BUILD32}" \
-CXX="g++ ${BUILD32}" \
-./configure \
---prefix=/usr
-
 make
-
-#make check 2>&1 | tee $FILE_CHECKS
 
 make DESTDIR=${destdir} install
 
