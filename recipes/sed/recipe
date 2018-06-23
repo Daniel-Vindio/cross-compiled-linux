@@ -1,0 +1,53 @@
+program="sed"
+version="$VER_sed"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.xz
+
+description="
+
+Commands for Manipulating Filesystem Extended Attributes
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+-------------echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+sed -i 's/usr/tools/' build-aux/help2man
+sed -i 's/testsuite.panic-tests.sh//' Makefile.in
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--bindir=/bin
+
+make
+
+make html
+
+make check 2>&1 | tee $FILE_CHECKS
+
+make DESTDIR=${destdir} install
+
+install -d -m755 ${destdir}/usr/share/doc/sed-$VER_sed
+install -m644 doc/sed.html /usr/share/doc/sed-$VER_sed
+}
+
+
+
+
+
+
+
+
+
+
+

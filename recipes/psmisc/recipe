@@ -1,0 +1,48 @@
+program="psmisc"
+version="$VER_psmisc"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.xz
+
+description="
+
+The Psmisc package contains programs for displaying information about 
+running processes.---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--libdir=/lib
+
+make
+
+#make check 2>&1 | tee $FILE_CHECKS
+
+make DESTDIR=${destdir} install
+
+mv -v ${destdir}/usr/bin/fuser ${destdir}/bin
+mv -v ${destdir}/usr/bin/killall ${destdir}/bin
+}
+
+
+
+
+
+
+
+
+
+
+
