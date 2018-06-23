@@ -196,6 +196,11 @@ control_flujo () {
 #10.80. Psmisc-
 ./ibasicsyssw61_psmisc.sh $VER_psmisc xz
 
+#10.42. Iana-Etc-2.30
+./ibasicsyssw62_iana.sh $VER_iana bz2
+
+
+
 
 echo -e "
 #############################\n\
