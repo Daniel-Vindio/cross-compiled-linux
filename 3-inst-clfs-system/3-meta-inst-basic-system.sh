@@ -179,6 +179,14 @@ control_flujo () {
 ./ibasicsyssw55_attr.sh $VER_attr gz
 ./ibasicsyssw56_attr.sh $VER_attr gz
 
+#6.25. Acl-2.2.52
+#Ídem anterior
+./ibasicsyssw57_acl.sh $VER_acl gz
+./ibasicsyssw58_acl.sh $VER_acl gz
+
+#6.26. Libcap-2.25
+#Ídem anterior
+
 
 
 echo -e "
