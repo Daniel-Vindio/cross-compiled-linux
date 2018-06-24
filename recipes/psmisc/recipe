@@ -32,8 +32,11 @@ make
 
 make DESTDIR=${destdir} install
 
-mv -v ${destdir}/usr/bin/fuser ${destdir}/bin
-mv -v ${destdir}/usr/bin/killall ${destdir}/bin
+#Esto causa un error grave. Convierte /bin en un enlace a fuser y killall
+#Para mover esos archivo es mejor en este caso hacerlo una vez instalado
+#el paquete
+#mv -v ${destdir}/usr/bin/fuser ${destdir}/bin
+#mv -v ${destdir}/usr/bin/killall ${destdir}/bin
 }
 
 
