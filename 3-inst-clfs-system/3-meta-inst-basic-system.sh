@@ -215,9 +215,18 @@ control_flujo () {
 ./ibasicsyssw67_gdbm.sh $VER_gdbm gz
 
 #6.37. Gperf
-#No está en CLFS  (pendiente)
+#No está en CLFS. No genera bibliotecas --> Lo instalo solo en 64 bit
+./ibasicsyssw68_gperf.sh $VER_gperf gz
+
+#6.38. Expat-
+#No está en CLFS. Genera bibliotecas --> Lo instalo en 32 y 64 bit
+./ibasicsyssw69_expat.sh $VER_expat bz2
+./ibasicsyssw70_expat.sh $VER_expat bz2
 
 
+#6.39. Inetutils
+#No está en CLFS. No genera bibliotecas --> Lo instalo solo en 64 bit
+./ibasicsyssw71_inetutils.sh $VER_inetutils xz
 
 echo -e "
 #############################\n\
