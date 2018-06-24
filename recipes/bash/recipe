@@ -1,0 +1,48 @@
+program="bash"
+version="$VER_bash"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.gz
+
+description="
+
+The Bash package contains the Bourne-Again SHell.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--docdir=/usr/share/doc/bash-$VER_bash \
+--without-bash-malloc \
+--with-installed-readline
+
+make
+
+make DESTDIR=${destdir} install
+
+#Requiere mover archivos en el host
+#mv -vf /usr/bin/bash /bin
+}
+
+
+
+
+
+
+
+
+
+
+
