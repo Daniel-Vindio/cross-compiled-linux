@@ -32,7 +32,7 @@ paquetes="PRUEBA binutils bash bison bzip2 check cloog coreutils dejagnu \
 diffutils expect file findutils gawk gcc gettext glibc gmp graft grep \
 gzip isl linux lzip m4 make man_pages mpc mpfr ncurses patch perl pkg \
 qi sed tar tcl texinfo unzip util_linux vim xz zlib flex readline bc \
-attr acl libcap shadow psmisc iana libtool gdbm"
+attr acl libcap shadow psmisc iana libtool gdbm gperf expat inetutils"
 
 VER_PRUEBA="prueba_ok"
 VER_binutils="2.30"
@@ -92,6 +92,9 @@ VER_psmisc="23.1"
 VER_iana="2.30"			#iana-etc en el instalador
 VER_libtool="2.4.6"
 VER_gdbm="1.15"
+VER_gperf="3.1"
+VER_expat="2.2.5"
+VER_inetutils="1.9.4"
 
 
 for i in $paquetes; do
