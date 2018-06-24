@@ -199,6 +199,23 @@ control_flujo () {
 #10.42. Iana-Etc-2.30
 ./ibasicsyssw62_iana.sh $VER_iana bz2
 
+#10.65. Grep-
+./ibasicsyssw63_grep.sh $VER_grep xz
+
+#Ahora toca bash  para 32 bit. ¿Hace falta en 64 bit de tools/bin/bash
+#a un basr en /bin ?. Creo que se coplicaría hasta la ejecución de 
+#este mismo programa. Lo pospongo.
+
+#10.43. Libtool-
+./ibasicsyssw64_libtool.sh $VER_libtool xz
+./ibasicsyssw65_libtool.sh $VER_libtool xz
+
+#10.48. GDBM-
+./ibasicsyssw66_gdbm.sh $VER_gdbm gz
+./ibasicsyssw67_gdbm.sh $VER_gdbm gz
+
+#6.37. Gperf
+#No está en CLFS  (pendiente)
 
 
 
