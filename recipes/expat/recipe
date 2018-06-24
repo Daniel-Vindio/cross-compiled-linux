@@ -1,0 +1,52 @@
+program="expat"
+version="$VER_expat"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.bz2
+
+description="
+
+This is Expat, a C library for parsing XML, started by James Clark 
+in 1997. Expat is a stream-oriented XML parser. This means that you 
+register handlers with the parser before starting the parse. These 
+handlers are called when the parser discovers the associated structures 
+in the document being parsed. A start tag is an example of the kind of 
+structures for which you may register handlers
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+sed -i 's|usr/bin/env |bin/|' run.sh.in
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--disable-static
+
+make
+
+make check 2>&1 | tee $FILE_CHECKS
+
+make DESTDIR=${destdir} install
+}
+
+
+
+
+
+
+
+
+
+
+

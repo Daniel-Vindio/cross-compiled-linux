@@ -1,0 +1,51 @@
+program="gperf"
+version="$VER_gperf"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.gz
+
+description="
+
+GNU gperf is a perfect hash function generator. For a given list of 
+strings, it produces a hash function and hash table, in form of C or 
+C++ code, for looking up a value depending on the input string. The 
+hash function is perfect, which means that the hash table has no 
+collisions, and the hash table lookup needs a single string 
+comparison only. 
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--docdir=/usr/share/doc/gperf-$VER_gperf
+
+make
+
+#make -j1 check 2>&1 | tee $FILE_CHECKS
+
+make DESTDIR=${destdir} install
+
+}
+
+
+
+
+
+
+
+
+
+
+
