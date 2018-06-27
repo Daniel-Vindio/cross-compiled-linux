@@ -228,6 +228,27 @@ control_flujo () {
 #No está en CLFS. No genera bibliotecas --> Lo instalo solo en 64 bit
 ./ibasicsyssw71_inetutils.sh $VER_inetutils xz
 
+#6.41. XML::Parser
+#No está en CLFS. Genera module de perl?  --> Lo instalo en 32? y 64 bit ??
+#La duda es si el sistema en la build machine para compilar otros paquetes
+#de 32 bit va a nacesitar esa module como 32 bit.
+#
+#Problema. 
+#10.50. Perl-5.20.0 32 Bit Libraries
+#10.51. Perl-5.20.0 64 Bit
+#No quería reinstalar Perl, pero me temo que algo habrá que hacer...
+#De momento tengo un Perl instaldo en tools desde el principio que funciona
+#bien. Por cierto, se compiló como 32 bit (pero funciona en 64).
+
+#instalaré XML::Parser en:
+# perldoc -l File::Basename
+#/tools/lib/perl5/5.26.1/File/Basename.pm
+#el prefix es /tools
+
+./ibasicsyssw72_xml-parser.sh $VER_xmlparser gz
+
+
+
 echo -e "
 #############################\n\
 #  terminado con exito      #\n\
