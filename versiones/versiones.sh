@@ -32,7 +32,8 @@ paquetes="PRUEBA binutils bash bison bzip2 check cloog coreutils dejagnu \
 diffutils expect file findutils gawk gcc gettext glibc gmp graft grep \
 gzip isl linux lzip m4 make man_pages mpc mpfr ncurses patch perl pkg \
 qi sed tar tcl texinfo unzip util_linux vim xz zlib flex readline bc \
-attr acl libcap shadow psmisc iana libtool gdbm gperf expat inetutils"
+attr acl libcap shadow psmisc iana libtool gdbm gperf expat inetutils \
+xmlparser "
 
 VER_PRUEBA="prueba_ok"
 VER_binutils="2.30"
@@ -95,6 +96,7 @@ VER_gdbm="1.15"
 VER_gperf="3.1"
 VER_expat="2.2.5"
 VER_inetutils="1.9.4"
+VER_xmlparser="2.44"
 
 
 for i in $paquetes; do
