@@ -1,0 +1,47 @@
+program="XML-Parser"
+version="$VER_xmlparser"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.gz
+
+description="
+
+The XML::Parser module is a Perl interface to James Clark's XML parser, Expat.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+CC="gcc ${BUILD32}"
+CXX="g++ ${BUILD32}"
+perl Makefile.PL PREFIX=/tools INSTALLDIRS=perl
+
+make
+
+#make test 2>&1 | tee $FILE_CHECKS
+
+make DESTDIR=${destdir} install
+
+mv -v $destdir/tools/lib/perl5/5.26.1/x86_64-linux $destdir/tools/lib/perl5/5.26.1/i686-linux
+#Hace falta ya que si no lo archiva en x86_64-linux y en 32 bit no lo encuentran
+
+}
+
+
+
+
+
+
+
+
+
+
+
