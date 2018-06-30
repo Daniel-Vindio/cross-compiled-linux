@@ -248,6 +248,24 @@ control_flujo () {
 ./ibasicsyssw72_xml-parser.sh $VER_xmlparser gz
 
 
+#6.42. Intltool-
+#Solo hay programas. No hay librerías.Solo instalo version 64 bit
+./ibasicsyssw73_intltool.sh $VER_intltool gz
+
+#6.43. Autoconf-
+#Solo hay programas. No hay librerías.Solo instalo version 64 bit
+./ibasicsyssw74_autoconf.sh $VER_autoconf xz
+
+#6.44. Automake-
+./ibasicsyssw75_automake.sh $VER_automake xz
+
+#10.75. XZ Utils- 32 Bit Libraries
+./ibasicsyssw76_xz.sh $VER_xz xz
+./ibasicsyssw77_xz.sh $VER_xz xz
+
+#10.77. Kmod-
+./ibasicsyssw78_kmod.sh $VER_kmod xz
+./ibasicsyssw79_kmod.sh $VER_kmod xz
 
 echo -e "
 #############################\n\
