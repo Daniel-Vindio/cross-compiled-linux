@@ -1,0 +1,57 @@
+program="xz"
+version="$VER_xz"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.xz
+
+description="
+
+The Xz package contains programs for compressing and decompressing files. 
+It provides capabilities for the lzma and the newer xz compression 
+formats. Compressing text files with xz yields a better compression 
+percentage than with the traditional gzip or bzip2 commands.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--disable-static \
+--docdir=/usr/share/doc/xz-$1
+
+make
+
+#make check 2>&1 | tee $FILE_CHECKS
+
+make DESTDIR=${destdir} install
+
+mv -v ${destdir}/usr/lib/liblzma.so.* ${destdir}/lib
+
+ln -svf ../../lib/$(readlink ${destdir}/usr/lib/liblzma.so) ${destdir}/usr/lib/liblzma.so
+
+#Esto hay que moverlo en el host
+#mv -v /usr/bin/{lzma,unlzma,lzcat,xz,unxz,xzcat} /bin
+
+}
+
+
+
+
+
+
+
+
+
+
+
