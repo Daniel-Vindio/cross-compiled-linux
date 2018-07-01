@@ -33,7 +33,7 @@ diffutils expect file findutils gawk gcc gettext glibc gmp graft grep \
 gzip isl linux lzip m4 make man_pages mpc mpfr ncurses patch perl pkg \
 qi sed tar tcl texinfo unzip util_linux vim xz zlib flex readline bc \
 attr acl libcap shadow psmisc iana libtool gdbm gperf expat inetutils \
-xmlparser intltool autoconf automake kmod"
+xmlparser intltool autoconf automake kmod elfutils libelf tcc"
 
 VER_PRUEBA="prueba_ok"
 VER_binutils="2.30"
@@ -101,6 +101,9 @@ VER_intltool="0.51.0"
 VER_autoconf="2.69"
 VER_automake="1.15.1"
 VER_kmod="25"
+VER_elfutils="0.170"
+VER_libelf=${VER_elfutils}
+VER_tcc="0.9.27"
 
 
 for i in $paquetes; do
