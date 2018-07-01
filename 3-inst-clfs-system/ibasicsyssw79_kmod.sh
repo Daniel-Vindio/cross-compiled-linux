@@ -83,7 +83,7 @@ PKG_CONFIG_PATH=${PKG_CONFIG_PATH64} \
 --prefix=/usr \
 --bindir=/bin \
 --sysconfdir=/etc \
---libdir=/usr/lib64\
+--libdir=/usr/lib64 \
 --with-rootlibdir=/lib64 \
 --with-zlib \
 --with-xz
