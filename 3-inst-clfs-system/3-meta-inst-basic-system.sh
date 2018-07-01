@@ -267,6 +267,22 @@ control_flujo () {
 ./ibasicsyssw78_kmod.sh $VER_kmod xz
 ./ibasicsyssw79_kmod.sh $VER_kmod xz
 
+#10.63. Gettext-
+./ibasicsyssw80_gettext.sh $VER_gettext xz
+./ibasicsyssw81_gettext.sh $VER_gettext xz
+
+#6.48. Libelf-
+./ibasicsyssw82_libelf.sh $VER_libelf bz2
+./ibasicsyssw83_libelf.sh $VER_libelf bz2
+
+#Tiny CC Compiler
+./ibasicsyssw84_tcc.sh $VER_tcc bz2
+
+#6.49. Libffi
+#Solo son librerias y headers. No hay programas.
+./ibasicsyssw85_libffi.sh $VER_libffi gz
+./ibasicsyssw86_libffi.sh $VER_libffi gz
+
 echo -e "
 #############################\n\
 #  terminado con exito      #\n\

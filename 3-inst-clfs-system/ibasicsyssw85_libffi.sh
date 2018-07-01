@@ -1,7 +1,5 @@
-# Instalador de tcc
-# 64 bit on 64 bit machine, MULTILIB.
-
-#tcc-0.9.27.tar.bz2
+# Instalador de libffi
+# 32 bit on 64 bit machine, MULTILIB.
 
 nombre=$(echo $0 | cut -d "." -f2 | cut -d "_" -f2)
 nombre_comp=$nombre-$1.tar.$2
@@ -76,29 +74,23 @@ cd $nombre_dir
 
 #----------------------CONFIGURE - MAKE - MAKE INSTALL------------------
 
-echo -e "\nInstalacion de $nombre_dir 64 bit on 64 bit machine, MULTILIB" >> $FILE_BITACORA
+echo -e "\nInstalacion de $nombre_dir 32 bit on 64 bit machine, MULTILIB" >> $FILE_BITACORA
 
+sed -e '/^includesdir/ s/$(libdir).*$/$(includedir)/' \
+-i include/Makefile.in
+
+sed -e '/^includedir/ s/=.*$/=@includedir@/' \
+-e 's/^Cflags: -I${includedir}/Cflags:/' \
+-i libffi.pc.in
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
 ./configure \
 --prefix=/usr \
---libdir=/lib64 \
---enable-cross
+--libdir=/lib \
+--disable-static
 registro_error $MSG_CONF
 
-#De esta forma se compila para 64 bit un conjunto de tcc para distintas
-#arqitecturas. Pir ejemplo el /usr/bin/i386-tcc que es un cc para generar
-#binarios de 32 bit. Este será necesario para generar un tcc que corra
-#en 32 bit (y genere binarios de 32 bit)
-
-#Esta será la receta para generar el tcc de la maquina host
-#./configure \
-#--prefix=/usr \
-#--cpu=i386
-
-#Texto1="CC=gcc"
-#Texto2="CC=i386-tcc"
-#sed -i 's/'"$Texto1"'/'"$Texto2"'/' config.mak
-#Así le decimos qué cc hay que usar.
-#Es la compilación cruzada más sencilla que he visto en mi vida!!!!
 
 make
 registro_error $MSG_MAKE
