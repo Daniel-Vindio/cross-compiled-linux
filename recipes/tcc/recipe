@@ -24,10 +24,8 @@ echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
 
 ./configure \
 --prefix=/usr \
---libdir=/lib \
---crtprefix=/usr/lib \
---sysincludepaths \
 --cpu=i386
+
 
 Texto1="CC=gcc"
 Texto2="CC=i386-tcc"
