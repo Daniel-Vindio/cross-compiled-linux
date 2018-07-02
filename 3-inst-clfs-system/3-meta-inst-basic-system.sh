@@ -283,6 +283,15 @@ control_flujo () {
 ./ibasicsyssw85_libffi.sh $VER_libffi gz
 ./ibasicsyssw86_libffi.sh $VER_libffi gz
 
+#6.50. OpenSSL
+./ibasicsyssw87_openssl.sh $VER_openssl gz
+./ibasicsyssw88_openssl.sh $VER_openssl gz
+
+
+#6.51. Python-3
+./ibasicsyssw89_Python.sh $VER_Python xz
+./ibasicsyssw90_Python.sh $VER_Python xz
+
 echo -e "
 #############################\n\
 #  terminado con exito      #\n\
