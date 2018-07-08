@@ -319,10 +319,12 @@ control_flujo () {
 ./ibasicsyssw95_util-linux.sh $VER_util_linux xz
 ./ibasicsyssw96_util-linux.sh $VER_util_linux xz
 
-
 #6.55. E2fsprogs- CLF 10.39
 ./ibasicsyssw97_e2fsprogs.sh $VER_e2fsprogs gz
 ./ibasicsyssw98_e2fsprogs.sh $VER_e2fsprogs gz
+
+#6.56. Coreutils-
+./ibasicsyssw99_coreutils.sh $VER_coreutils xz
 
 echo -e "
 #############################\n\
