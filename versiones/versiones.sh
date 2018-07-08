@@ -34,7 +34,7 @@ gzip isl linux lzip m4 make man_pages mpc mpfr ncurses patch perl pkg \
 qi sed tar tcl texinfo unzip util_linux vim xz zlib flex readline bc \
 attr acl libcap shadow psmisc iana libtool gdbm gperf expat inetutils \
 xmlparser intltool autoconf automake kmod elfutils libelf tcc libffi \
-openssl Python"
+openssl Python ninja meson procps e2fsprogs"
 
 VER_PRUEBA="prueba_ok"
 VER_binutils="2.30"
@@ -108,6 +108,10 @@ VER_tcc="0.9.27"
 VER_libffi="3.2.1"
 VER_openssl="1.1.0g"
 VER_Python="3.6.4"
+VER_ninja="1.8.2"
+VER_meson="0.44.0"
+VER_procps="3.3.12"
+VER_e2fsprogs="1.43.9"
 
 for i in $paquetes; do
 	export VER_$i
