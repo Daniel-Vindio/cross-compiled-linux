@@ -1,0 +1,71 @@
+program="coreutils"
+version="$VER_coreutils"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.xz
+
+description="
+
+The Coreutils package contains utilities for showing and setting the 
+basic system characteristics.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+autoreconf -f -v
+automake -f -v
+
+sed -i '/test.lock/s/^/#/' gnulib-tests/gnulib.mk
+
+FORCE_UNSAFE_CONFIGURE=1 \
+TIME_T_32_BIT_OK=yes \
+CC="gcc ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--enable-no-install-program=kill,uptime \
+--enable-install-program=hostname
+
+FORCE_UNSAFE_CONFIGURE=1 make
+
+make DESTDIR=${destdir} install
+
+#Después hay que mover de sitio los binario. Pero eso es mejor hacerlo
+#ya en el host, ya que desde aquí se estropea el /bin
+
+#mv -v /usr/bin/{cat,chgrp,chmod,chown,cp,date,dd,df,echo} /bin
+#mv -v /usr/bin/{false,ln,ls,mkdir,mknod} /bin
+#mv -v /usr/bin/{rmdir,stty,sync,true,uname} /bin
+#mv -v /usr/bin/{head,sleep,nice} /bin
+#
+#mv -v /usr/bin/chroot /usr/sbin
+#mv -v /usr/share/man/man1/chroot.1 /usr/share/man/man8/chroot.8
+#sed -i s/\"1\"/\"8\"/1 /usr/share/man/man8/chroot.8
+
+#----------pruebas------------------------
+#make NON_ROOT_USERNAME=nobody check-root 2>&1 | tee $FILE_CHECKS
+#echo "dummy:x:1000:nobody" >> /etc/group
+#chown -Rv nobody .
+#su nobody -s /bin/bash -c "PATH=$PATH make RUN_EXPENSIVE_TESTS=yes check"
+#sed -i '/dummy/d' /etc/group
+
+}
+
+
+
+
+
+
+
+
+
+
+
