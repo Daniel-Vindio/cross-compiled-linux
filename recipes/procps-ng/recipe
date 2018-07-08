@@ -1,0 +1,53 @@
+program="procps-ng"
+version="$VER_procps"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.xz
+
+description="
+
+The Procps-ng package contains programs for monitoring processes.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--exec-prefix= \
+--libdir=/lib \
+--disable-static \
+--disable-kill \
+--docdir=/usr/share/doc/procps-ng-$VER_procps_ng
+
+make
+
+sed -i -r 's|(pmap_initname)\\\$|\1|' testsuite/pmap.test/pmap.exp
+sed -i '/set tty/d' testsuite/pkill.test/pkill.exp
+rm testsuite/pgrep.test/pgrep.exp
+make check
+
+make DESTDIR=${destdir} install
+
+}
+
+
+
+
+
+
+
+
+
+
+
