@@ -236,7 +236,7 @@ control_flujo () {
 #Problema. 
 #10.50. Perl-5.20.0 32 Bit Libraries
 #10.51. Perl-5.20.0 64 Bit
-#No quería reinstalar Perl, pero me temo que algo habrá que hacer...
+#No quería reinstalar Perl, pero me temo que algo habrá que hacer...No. No se instala
 #De momento tengo un Perl instaldo en tools desde el principio que funciona
 #bien. Por cierto, se compiló como 32 bit (pero funciona en 64).
 
@@ -289,8 +289,40 @@ control_flujo () {
 
 
 #6.51. Python-3
-./ibasicsyssw89_Python.sh $VER_Python xz
+##./ibasicsyssw89_Python.sh $VER_Python xz
 ./ibasicsyssw90_Python.sh $VER_Python xz
+
+#6.52. Ninja-
+./ibasicsyssw91_ninja.sh $VER_ninja gz
+
+#6.53. Meson
+./ibasicsyssw92_meson.sh $VER_meson gz
+#Pasa como en Python. No hay opción a multilib.
+
+#6.54. Procps-ng-
+./ibasicsyssw93_procps-ng.sh $VER_procps xz
+./ibasicsyssw94_procps-ng.sh $VER_procps xz
+
+
+#Se adelanta la instalación de Util-linux. Esto es debido a que la versión
+#en 32 bit de E2fsprogs requiere libuuid, que solo está en /tools/64.
+#Aunque se ajusten los paths, LIBS, etc para que encuentre la librería
+#el porblema persiste. O bien no enuentra libuuid en /tools/lib (lógicamente
+#ya ue no esté instalado ahí) o si cambiamos a /tools/lib64, lo encentra
+#pero portesta por ser una versión incompatible.
+#Voy a probar a instalar ya en el definitibo /lib util-linux, previsto
+#para más adelante.
+
+#De hecho ese es el orden previsto en CLFS. Efectivamente. Así funciona.
+
+#6.73. Util-linux- /  10.35. Util-linux- 32 bit / 10.36. 64 Bit
+./ibasicsyssw95_util-linux.sh $VER_util_linux xz
+./ibasicsyssw96_util-linux.sh $VER_util_linux xz
+
+
+#6.55. E2fsprogs- CLF 10.39
+./ibasicsyssw97_e2fsprogs.sh $VER_e2fsprogs gz
+./ibasicsyssw98_e2fsprogs.sh $VER_e2fsprogs gz
 
 echo -e "
 #############################\n\
