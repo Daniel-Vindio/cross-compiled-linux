@@ -326,6 +326,11 @@ control_flujo () {
 #6.56. Coreutils-
 ./ibasicsyssw99_coreutils.sh $VER_coreutils xz
 
+#6.57. Check
+./ibasicsyssw100_check.sh $VER_check gz
+./ibasicsyssw101_check.sh $VER_check gz
+
+
 echo -e "
 #############################\n\
 #  terminado con exito      #\n\
