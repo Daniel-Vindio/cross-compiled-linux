@@ -326,10 +326,17 @@ control_flujo () {
 #6.56. Coreutils-
 ./ibasicsyssw99_coreutils.sh $VER_coreutils xz
 
-#6.57. Check
+#6.57. Check-
 ./ibasicsyssw100_check.sh $VER_check gz
 ./ibasicsyssw101_check.sh $VER_check gz
 
+#6.58. Diffutils-
+#Solo tiene programas. No tiene librerías. Se instala solo 64 bit
+./ibasicsyssw102_diffutils.sh $VER_diffutils xz
+
+#6.59. Gawk-
+./ibasicsyssw103_gawk.sh $VER_gawk xz
+./ibasicsyssw104_gawk.sh $VER_gawk xz
 
 echo -e "
 #############################\n\
