@@ -1,0 +1,45 @@
+program="diffutils"
+version="$VER_diffutils"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.xz
+
+description="
+
+The Diffutils package contains programs that show the differences between files or directories.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+./configure \
+--prefix=/usr
+
+make
+
+make DESTDIR=${destdir} install
+
+#make check 2>&1 | tee $FILE_CHECKS
+
+}
+
+
+
+
+
+
+
+
+
+
+
