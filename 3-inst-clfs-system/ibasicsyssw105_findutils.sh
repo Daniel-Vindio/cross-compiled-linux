@@ -85,7 +85,7 @@ CC="gcc ${BUILD64}" \
 CXX="g++ ${BUILD64}" \
 ./configure \
 --prefix=/usr \
---localstatedir=/var/lib/locate
+--localstatedir=/var/lib64/locate
 registro_error $MSG_CONF
 
 make
