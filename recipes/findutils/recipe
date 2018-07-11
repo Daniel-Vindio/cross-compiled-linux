@@ -1,0 +1,63 @@
+program="findutils"
+version="$VER_findutils"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.gz
+
+description="
+
+The Findutils package contains programs to find files. These programs 
+are provided to recursively search through a directory tree and to 
+create, maintain, and search a database (often faster than the recursive 
+find, but unreliable if the database has not been recently updated)
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+sed -i 's/test-lock..EXEEXT.//' tests/Makefile.in
+registro_error "sed"
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--localstatedir=/var/lib/locate
+
+make
+registro_error $MSG_MAKE
+
+make DESTDIR=${destdir} install
+
+sed -i 's|find:=${BINDIR}|find:=/bin|' ${destdir}/usr/bin/updatedb
+
+
+#mv -v /usr/bin/find /bin
+#Esto mejor moverlo en el host
+
+#make check 2>&1 | tee $FILE_CHECKS
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
