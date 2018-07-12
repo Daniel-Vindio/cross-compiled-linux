@@ -354,6 +354,9 @@ control_flujo () {
 #Solo tiene programas. No tiene librerías. Se instala solo 64 bit
 ./ibasicsyssw106_groff.sh $VER_groff gz
 
+#6.62. GRUB-
+#Solo tiene programas. No tiene librerías. Se instala solo 64 bit
+./ibasicsyssw107_grub.sh $VER_grub xz
 
 echo -e "
 #############################\n\
