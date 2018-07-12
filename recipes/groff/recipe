@@ -1,0 +1,44 @@
+program="groff"
+version="$VER_groff"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.gz
+
+description="
+
+The Groff package contains programs for processing and formatting text.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+page=A4 \
+./configure \
+--prefix=/usr
+
+make -j1
+
+make DESTDIR=${destdir} install
+
+}
+
+
+
+
+
+
+
+
+
+
+
