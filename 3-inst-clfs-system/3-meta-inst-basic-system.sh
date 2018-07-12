@@ -341,9 +341,18 @@ control_flujo () {
 #Solo tiene programas. No tiene librerías. Se instala solo 64 bit
 ./ibasicsyssw102_diffutils.sh $VER_diffutils xz
 
+#6.59. Gawk-
+./ibasicsyssw103_gawk.sh $VER_gawk xz
+./ibasicsyssw104_gawk.sh $VER_gawk xz
+
+
 #6.60. Findutils-
 #Solo tiene programas. No tiene librerías. Se instala solo 64 bit
 ./ibasicsyssw105_findutils.sh $VER_findutils gz
+
+#6.61. Groff-
+#Solo tiene programas. No tiene librerías. Se instala solo 64 bit
+./ibasicsyssw106_groff.sh $VER_groff gz
 
 
 echo -e "
