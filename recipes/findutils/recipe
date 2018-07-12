@@ -7,10 +7,7 @@ tarname=${program}-${version}.tar.gz
 
 description="
 
-The Findutils package contains programs to find files. These programs 
-are provided to recursively search through a directory tree and to 
-create, maintain, and search a database (often faster than the recursive 
-find, but unreliable if the database has not been recently updated)
+The Gawk package contains programs for manipulating text files.
 ---
 "
 
@@ -24,7 +21,7 @@ cd "$srcdir"
 echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
 
 sed -i 's/test-lock..EXEEXT.//' tests/Makefile.in
-registro_error "sed"
+
 
 CC="gcc ${BUILD32}" \
 CXX="g++ ${BUILD32}" \
