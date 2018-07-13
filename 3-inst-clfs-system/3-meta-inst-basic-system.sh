@@ -358,6 +358,21 @@ control_flujo () {
 #Solo tiene programas. No tiene librerías. Se instala solo 64 bit
 ./ibasicsyssw107_grub.sh $VER_grub xz
 
+
+#6.63. Less
+#Solo tiene programas. No tiene librerías. Se instala solo 64 bit
+./ibasicsyssw108_less.sh $VER_less gz
+
+#6.64. Gzip
+#Solo tiene programas. No tiene librerías. Se instala solo 64 bit
+./ibasicsyssw109_gzip.sh $VER_gzip xz
+
+#6.65. IPRoute2-
+./ibasicsyssw110_iproute2.sh $VER_iproute2 xz
+
+
+
+
 echo -e "
 #############################\n\
 #  terminado con exito      #\n\
