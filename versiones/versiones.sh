@@ -34,7 +34,7 @@ gzip isl linux lzip m4 make man_pages mpc mpfr ncurses patch perl pkg \
 qi sed tar tcl texinfo unzip util_linux vim xz zlib flex readline bc \
 attr acl libcap shadow psmisc iana libtool gdbm gperf expat inetutils \
 xmlparser intltool autoconf automake kmod elfutils libelf tcc libffi \
-openssl Python ninja meson procps e2fsprogs groff"
+openssl Python ninja meson procps e2fsprogs groff grub less iproute2"
 
 VER_PRUEBA="prueba_ok"
 VER_binutils="2.30"
@@ -114,6 +114,9 @@ VER_meson="0.44.0"
 VER_procps="3.3.12"
 VER_e2fsprogs="1.43.9"
 VER_groff="1.22.3"
+VER_grub="2.02"
+VER_less="530"
+VER_iproute2="4.15.0"
 
 
 for i in $paquetes; do
