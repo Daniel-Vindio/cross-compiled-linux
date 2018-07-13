@@ -212,6 +212,31 @@ mv -v /usr/bin/chroot /usr/sbin
 #6.57. Check
 qi -i check-$VER_check-i686+1.tlz
 
+#6.58. Diffutils
+qi -i diffutils-$VER_diffutils-i686+1.tlz
+
+#6.59. Gawk-
+qi -i gawk-$VER_gawk-i686+1.tlz
+
+#6.60. Findutils-
+qi -i findutils-$VER_findutils-i686+1.tlz
+
+#6.61. Groff-
+qi -i groff-$VER_groff-i686+1.tlz
+
+#6.62. GRUB-
+qi -i grub-$VER_grub-i686+1.tlz
+
+#6.63. Less-
+qi -i less-$VER_less-i686+1.tlz
+
+#6.64. Gzip
+qi -i gzip-$VER_gzip-i686+1.tlz
+mv -v /usr/bin/gzip /bin
+
+#6.65. IPRoute2-
+qi -i iproute2-$VER_iproute2-i686+1.tlz
+
 echo -e "
 #############################\n\
 #  terminado con exito      #\n\
