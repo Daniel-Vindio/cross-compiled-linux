@@ -1,0 +1,43 @@
+program="iproute2"
+version="$VER_iproute2"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.xz
+
+description="
+
+The IPRoute2 package contains programs for basic and advanced 
+IPV4-based networking.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+sed -i /ARPD/d Makefile
+
+rm -fv man/man8/arpd.8
+
+make CC="gcc ${BUILD32}" LIBDIR=/usr/lib
+
+make LIBDIR=/usr/lib DOCDIR=/usr/share/doc/iproute2-$1 DESTDIR=${destdir} install
+
+}
+
+
+
+
+
+
+
+
+
+
+
