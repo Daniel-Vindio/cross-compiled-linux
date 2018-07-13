@@ -370,6 +370,9 @@ control_flujo () {
 #6.65. IPRoute2-
 ./ibasicsyssw110_iproute2.sh $VER_iproute2 xz
 
+#10.70. Kbd-
+./ibasicsyssw112_kbd.sh $VER_kbd xz
+
 
 
 
