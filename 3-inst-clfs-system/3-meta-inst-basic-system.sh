@@ -394,8 +394,9 @@ control_flujo () {
 #Por ejemplo, en make hay que poner make CFLAGS=-m32.
 #PEro no encuentra las lib de 32 bit. Hay que explicárselo.
 
-
-
+#6.72. Eudev-
+./ibasicsyssw119_eudev.sh $VER_eudev gz
+./ibasicsyssw120_eudev.sh $VER_eudev gz
 
 echo -e "
 #############################\n\
