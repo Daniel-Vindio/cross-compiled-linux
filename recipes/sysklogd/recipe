@@ -25,10 +25,13 @@ sed -i '/Error loading kernel symbols/{n;n;d}' ksym_mod.c
 
 sed -i 's/union wait/int/' syslogd.c
 
-CC="gcc ${BUILD32}" \
-CXX="g++ ${BUILD32}"
+Texto1="CC= gcc"
+Texto2="CC= gcc -m32"
+sed -i 's/'"$Texto1"'/'"$Texto2"'/' Makefile
+
 
 make
+
 mkdir -vp ${destdir}/sbin
 make BINDIR=${destdir}/sbin DESTDIR=${destdir} install
 
