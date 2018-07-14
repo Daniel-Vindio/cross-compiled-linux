@@ -373,6 +373,27 @@ control_flujo () {
 #10.70. Kbd-
 ./ibasicsyssw112_kbd.sh $VER_kbd xz
 
+#6.67. Libpipeline
+./ibasicsyssw113_libpipeline.sh $VER_libpipeline gz
+./ibasicsyssw114_libpipeline.sh $VER_libpipeline gz
+
+#6.68. Make-
+./ibasicsyssw115_make.sh $VER_make gz
+
+#6.69. Patch
+./ibasicsyssw116_patch.sh $VER_patch xz
+
+#6.70. Sysklogd-
+./ibasicsyssw117_sysklogd.sh $VER_sysklogd gz
+
+#6.71. Sysvinit-
+./ibasicsyssw118_sysvinit.sh $VER_sysvinit bz2
+#Pendiente de generar el paqete.
+#Es un makefile muy sencillo, pero que no está preparado ara la cmpilación
+#cruzada. Hay que estudiar cómo pasarle los parámetros desde 64 para 32 bit.
+#Por ejemplo, en make hay que poner make CFLAGS=-m32.
+#PEro no encuentra las lib de 32 bit. Hay que explicárselo.
+
 
 
 
