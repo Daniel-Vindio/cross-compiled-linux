@@ -1,0 +1,48 @@
+program="libpipeline"
+version="$VER_libpipeline"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.gz
+
+description="
+
+The Libpipeline package contains a library for manipulating pipelines 
+of subprocesses in a flexible and convenient way.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+PKG_CONFIG_PATH=${PKG_CONFIG_PATH32} \
+./configure \
+--prefix=/usr \
+--libdir=/lib
+
+make
+
+make DESTDIR=${destdir} install
+
+#make check 2>&1 | tee $FILE_CHECKS
+
+}
+
+
+
+
+
+
+
+
+
+
+
