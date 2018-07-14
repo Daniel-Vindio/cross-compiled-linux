@@ -388,11 +388,6 @@ control_flujo () {
 
 #6.71. Sysvinit-
 ./ibasicsyssw118_sysvinit.sh $VER_sysvinit bz2
-#Pendiente de generar el paqete.
-#Es un makefile muy sencillo, pero que no está preparado ara la cmpilación
-#cruzada. Hay que estudiar cómo pasarle los parámetros desde 64 para 32 bit.
-#Por ejemplo, en make hay que poner make CFLAGS=-m32.
-#PEro no encuentra las lib de 32 bit. Hay que explicárselo.
 
 #6.72. Eudev-
 ./ibasicsyssw119_eudev.sh $VER_eudev gz

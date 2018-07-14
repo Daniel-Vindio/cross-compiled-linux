@@ -81,10 +81,8 @@ echo -e "\nInstalacion de $nombre_dir 64 bit on 64 bit machine, MULTILIB" >> $FI
 patch -Np1 -i ../sysvinit-2.88dsf-consolidated-1.patch
 registro_error "patch"
 
-CC="gcc ${BUILD64}" \
-CXX="g++ ${BUILD64}"
 
-make -C src
+make CC="gcc ${BUILD64}" -C src
 registro_error $MSG_MAKE
 
 make -C src install
