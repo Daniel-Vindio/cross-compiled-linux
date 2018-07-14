@@ -1,0 +1,34 @@
+program="sysvinit"
+version="$VER_sysvinit"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.bz2
+
+description="
+
+The Sysvinit package contains programs for controlling the startup, 
+running, and shutdown of the system.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+patch -Np1 -i ${tardir}/sysvinit-2.88dsf-consolidated-1.patch
+
+make CC="gcc ${BUILD32}"
+
+#Leyendo el Makefile de src se ve que se instala en ROOT (una variable del makefile)
+#que se pasa así:
+make ROOT=${destdir} install
+
+##no tiene make check 2>&1 | tee $FILE_CHECKS
+
+}
