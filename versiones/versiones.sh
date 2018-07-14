@@ -35,7 +35,7 @@ qi sed tar tcl texinfo unzip util_linux vim xz zlib flex readline bc \
 attr acl libcap shadow psmisc iana libtool gdbm gperf expat inetutils \
 xmlparser intltool autoconf automake kmod elfutils libelf tcc libffi \
 openssl Python ninja meson procps e2fsprogs groff grub less iproute2 \
-kbd"
+kbd libpipeline sysklogd sysvinit"
 
 VER_PRUEBA="prueba_ok"
 VER_binutils="2.30"
@@ -119,7 +119,9 @@ VER_grub="2.02"
 VER_less="530"
 VER_iproute2="4.15.0"
 VER_kbd="2.0.4"
-
+VER_libpipeline="1.5.0"
+VER_sysklogd="1.5.1"
+VER_sysvinit="2.88dsf"
 
 for i in $paquetes; do
 	export VER_$i
