@@ -404,6 +404,9 @@ control_flujo () {
 ./ibasicsyssw124_texinfo.sh $VER_texinfo xz
 ./ibasicsyssw125_texinfo.sh $VER_texinfo xz
 
+#6.77. Vim-
+./ibasicsyssw126_vim.sh $VER_vim bz2
+
 echo -e "
 #############################\n\
 #  terminado con exito      #\n\
