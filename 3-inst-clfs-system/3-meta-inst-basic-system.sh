@@ -393,6 +393,17 @@ control_flujo () {
 ./ibasicsyssw119_eudev.sh $VER_eudev gz
 ./ibasicsyssw120_eudev.sh $VER_eudev gz
 
+#6.74. Man-DB-
+./ibasicsyssw121_man-db.sh $VER_man_db xz
+./ibasicsyssw122_man-db.sh $VER_man_db xz
+
+#6.75. Tar-1
+./ibasicsyssw123_tar.sh $VER_tar xz
+
+#6.76. Texinfo-
+./ibasicsyssw124_texinfo.sh $VER_texinfo xz
+./ibasicsyssw125_texinfo.sh $VER_texinfo xz
+
 echo -e "
 #############################\n\
 #  terminado con exito      #\n\
