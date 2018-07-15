@@ -1,5 +1,5 @@
 # Instalador de libpipeline
-# 32 bit on 64 bit machine, MULTILIB.
+# 64 bit on 64 bit machine, MULTILIB.
 
 #libpipeline-1.5.0.tar.gz
 
@@ -76,14 +76,14 @@ cd $nombre_dir
 
 #----------------------CONFIGURE - MAKE - MAKE INSTALL------------------
 
-echo -e "\nInstalacion de $nombre_dir 32 bit on 64 bit machine, MULTILIB" >> $FILE_BITACORA
+echo -e "\nInstalacion de $nombre_dir 64 bit on 64 bit machine, MULTILIB" >> $FILE_BITACORA
 
-CC="gcc ${BUILD32}" \
-CXX="g++ ${BUILD32}" \
-PKG_CONFIG_PATH=${PKG_CONFIG_PATH32} \
+CC="gcc ${BUILD64}" \
+CXX="g++ ${BUILD64}" \
+PKG_CONFIG_PATH=${PKG_CONFIG_PATH64} \
 ./configure \
 --prefix=/usr \
---libdir=/lib
+--libdir=/usr/lib64
 registro_error $MSG_CONF
 
 make

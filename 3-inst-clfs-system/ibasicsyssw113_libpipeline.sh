@@ -82,8 +82,7 @@ CC="gcc ${BUILD32}" \
 CXX="g++ ${BUILD32}" \
 PKG_CONFIG_PATH=${PKG_CONFIG_PATH32} \
 ./configure \
---prefix=/usr \
---libdir=/lib
+--prefix=/usr
 registro_error $MSG_CONF
 
 make
