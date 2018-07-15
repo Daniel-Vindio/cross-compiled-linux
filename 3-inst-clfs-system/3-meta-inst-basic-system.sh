@@ -205,6 +205,9 @@ control_flujo () {
 #Ahora toca bash  para 32 bit. ¿Hace falta en 64 bit de tools/bin/bash
 #a un basr en /bin ?. Creo que se coplicaría hasta la ejecución de 
 #este mismo programa. Lo pospongo.
+#Hace falta instalar bash en el chroot,para al fial, independizarlo de 
+#/tools. El paquete solo tiene librerías así que no hace falta copilar 
+#nada para 32 bit.
 
 #10.43. Libtool-
 ./ibasicsyssw64_libtool.sh $VER_libtool xz
@@ -406,6 +409,10 @@ control_flujo () {
 
 #6.77. Vim-
 ./ibasicsyssw126_vim.sh $VER_vim bz2
+
+#6.34. Bash-4
+./ibasicsyssw126_bash.sh $VER_bash gz
+
 
 echo -e "
 #############################\n\
