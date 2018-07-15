@@ -1,0 +1,56 @@
+program="texinfo"
+version="$VER_texinfo"
+release="1"
+arch="i686"
+
+tarname=${program}-${version}.tar.xz
+
+description="
+
+The Texinfo package contains programs for reading, writing, and 
+converting info pages.
+---
+"
+
+build() {
+
+. /home/0-var-chroot-rc
+
+unpack "${tardir}/$tarname"
+cd "$srcdir"
+
+echo -e "\n Creación paquete Qi $program para 32 bit" >> $FILE_BITACORA
+
+CC="gcc ${BUILD32}" \
+CXX="g++ ${BUILD32}" \
+./configure \
+--prefix=/usr \
+--disable-static
+
+make
+
+make DESTDIR=${destdir} install
+
+make TEXMF=${destdir}/usr/share/texmf install-tex
+
+pushd ${destdir}/usr/share/info
+rm -v dir
+for f in *
+    do install-info $f dir
+done
+popd
+#Esto parece que no hace nada
+
+#make check 2>&1 | tee $FILE_CHECKS
+}
+
+
+
+
+
+
+
+
+
+
+
