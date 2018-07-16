@@ -26,10 +26,9 @@ srcinst1="$srcdir/1-inst-cross-tools-multilib"
 srcinst2="$srcdir/2-inst-chroot"
 srcinst3="$srcdir/3-inst-clfs-system"
 dirversiones="$srcdir/versiones"
-#qipkgs32="$srcdir/paquetes32"
 chrootqipkgs="$CLFS/qipkgs"
 croothome="$CLFS/home"
-export srcdir srcinst1 srcinst2 srcinst3 dirversiones qipkgs32 \
+export srcdir srcinst1 srcinst2 srcinst3 dirversiones \
 	   chrootqipkgs croothome 
 
 #=================Variables para los instaladores=======================
