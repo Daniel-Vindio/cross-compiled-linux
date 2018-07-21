@@ -414,6 +414,15 @@ control_flujo () {
 ./ibasicsyssw126_bash.sh $VER_bash gz
 
 
+#6.79. Stripping Again
+#./z-stripping-again-1.sh
+#./z-stripping-again-2.sh
+
+
+#Para RUNIT
+
+
+
 echo -e "
 #############################\n\
 #  terminado con exito      #\n\
