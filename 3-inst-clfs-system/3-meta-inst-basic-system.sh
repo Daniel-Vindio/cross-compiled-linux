@@ -419,8 +419,15 @@ control_flujo () {
 #./z-stripping-again-2.sh
 
 
-#Para RUNIT
+#El kernel no hace falta compilarlo en 64 bit. Directamente se genera
+#un paquete qi. Sin embargo, para que sea más fácil trasladar el archivo
+#de configuración del kernel, ha inventado que el config sea 
+#ibasicsyssw127_kernel.config. Así cuando al principio se copian al
+#chrooot todos los instaladores, también se copia el config, necesario
+#para construir con qi el kerne. Necesito que esté en /home y de esta forma
+#es fácil. La receta está con todas las otras.
 
+##ibasicsyssw127_kernel.config = config
 
 
 echo -e "
