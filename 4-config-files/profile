@@ -1,0 +1,44 @@
+# Begin /etc/profile
+
+#export LANG=es_ES.iso-8859-15@euro
+export LANG=es_ES.ISO-8859-15@euro
+
+#------------------------------------------------------------------------------
+#Esto colorea el promt. Rojo para el root, verde para el resto de los usuarios.
+
+NORMAL="\[\e[0m\]"
+GREEN="\[\e[1;32m\]"
+RED="\[\e[1;31m\]"
+
+if [[ $EUID == 0 ]]; then
+  PS1="$RED\u [ $NORMAL\w$RED ]# $NORMAL"
+else
+  PS1="$GREEN\u [ $NORMAL\w$GREEN ]$ $NORMAL"
+fi
+
+unset NORMAL GREEN RED
+
+
+
+#------------------------------------------------------------------------------
+#Esto hace que se ejecuten los scripts del /etc/profile.d, como por ejemplo el
+#que gestiona el umask, etc
+
+for script in /etc/profile.d/*.sh
+  do
+    if [ -r $script ]
+      then
+       . $script
+    fi
+  done
+
+#------------------------------------------------------------------------------
+#En este caso, con GnuPG + Mutt, hace falta indicarle a GnuPG que lea la
+#la contraseña por la consola, en combinación con Mutt.
+#Para que funcione hace falta declarar la variable PGP_TTY
+
+GPG_TTY=$(tty)
+export GPG_TTY
+
+
+# End /etc/profile
