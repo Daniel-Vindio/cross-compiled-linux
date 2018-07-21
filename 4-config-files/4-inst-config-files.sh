@@ -33,3 +33,8 @@ if [ ! -f "/etc/hosts" ]; then
 	echo "127.0.0.1 localhost $(hostname)" > /etc/hosts
 	echo "created /etc/hosts ..."
 fi
+
+
+install -v -m 0644 fstab -t /etc
+
+
