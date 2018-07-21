@@ -1,0 +1,33 @@
+program="kernel"
+version="$VER_linux"
+release="1"
+arch="i686"
+
+tarname=linux-${version}.tar.xz
+
+description="
+Kernel
+     
+---
+"
+
+
+build() {
+
+unpack "${tardir}/$tarname"
+
+cd "$srcdir"
+
+make mrproper
+cp -v /home/ibasicsyssw127_kernel.config $srcdir/.config
+
+make oldconfig
+make
+make INSTALL_MOD_PATH="${destdir}" modules_install
+
+mkdir -p "${destdir}/boot"
+cp -iv arch/x86/boot/bzImage ${destdir}/boot/vmlinuz-${version}
+cp -iv System.map ${destdir}/boot/System.map-${version}
+cp -iv .config ${destdir}/boot/config-${version}
+
+}
