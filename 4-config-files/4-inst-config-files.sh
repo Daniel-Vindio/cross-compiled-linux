@@ -19,14 +19,14 @@ ifconfig.wlp0s29f7u6 modules mouse rc.site udev_retry \
 wpa_supplicant-wlp0s29f7u6.conf"
 
 for i in ${configfiles1}; do
-	install -v -m 0644 ${i} -t ${destndir1}
+	install -v -m0644 ${i} -t ${destndir1}
 done
 
 
 configfiles2="hostname resolv.conf inputrc profile shells"
 
 for i in ${configfiles2}; do
-	install -v -m 0644 ${i} -t ${destndir2}
+	install -v -m0644 ${i} -t ${destndir2}
 done
 
 if [ ! -f "/etc/hosts" ]; then
@@ -35,6 +35,18 @@ if [ ! -f "/etc/hosts" ]; then
 fi
 
 
-install -v -m 0644 fstab -t /etc
+install -v -m0644 fstab -t /etc
+
+if [ ! -d "/etc/modprobe.d" ]; then
+	mkdir -vp /etc/modprobe.d
+fi
+install -v -m755 usb.conf -t /etc/modprobe.d
+
+if [ ! -d "/boot/grub" ]; then
+	mkdir -vp /boot/grub
+fi
+install -v -m0644 grub.cfg -t /boot/grub
+
+
 
 
