@@ -38,13 +38,33 @@ echo 'gcc -m32 -s' >src/conf-ld
 
 package/install
 
+#Replacing sysvinit
 mkdir -v -p ${destdir}/etc/runit
 
+#Step 1: The three stages
+#Copio los mios, no los de muestra,aportados por el programa.
 cp -p /home/runit/[123] ${destdir}/etc/runit/
 cp -p /home/runit/ctrlaltdel ${destdir}/etc/runit/
 
-******Hay que seguir con las carpetas del sv.
-Ver si hay que copiar las carpetas supervise.
+
+mkdir -v -p ${destdir}/etc/sv/
+cp -pvR /home/runit/sv/getty-1 ${destdir}/etc/sv/getty-1
+
+
+#Step 2: The runit programs
+mkdir -v -p ${destdir}/sbin
+cp -vp /package/admin/runit/command/runit* ${destdir}/sbin/
+
+#Step 3: The getties
+mkdir -v -p ${destdir}/service
+ln -vs ${destdir}/etc/sv/getty-5 ${destdir}/service/
+
+
+hasta aquí fuciona.
+Ver qué pasa con la instalación de los ejecutables de rnunit en /command
+hace falta poner de acuerdo a el PATH de /etc/runit/2 para que encuentre
+runsvdir
+
 
 
 }
