@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+
+/usr/local/bin/sv start iptables || exit 1
+
+echo -e "---- ./run network eth0 inicio"
+exec 2>&1
+exec /etc/sv/network.eth0/network.eth0_ini.sh
+

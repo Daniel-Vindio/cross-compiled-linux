@@ -1,0 +1,5 @@
+#!/bin/bash
+exec 2>&1
+mkdir -p /tmp/syslogd
+/usr/local/bin/svlogd -tt /tmp/syslogd
+

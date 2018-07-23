@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "---- ./run klogd"
+/usr/local/bin/sv up syslogd || exit 1
+exec /sbin/klogd -n -c 4
+

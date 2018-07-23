@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "---- ./run syslogd!"
+exec /sbin/syslogd -n -m 0
+

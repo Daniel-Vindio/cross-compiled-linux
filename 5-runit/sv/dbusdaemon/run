@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+echo -e "---- ./run dbusdaemon inicio"
+exec 2>&1
+exec /etc/sv/dbusdaemon/dbusdaemon_ini.sh

@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+echo -e "---- ./run service inicio"
+exec 2>&1
+exec /etc/sv/network/network_ini.sh
+

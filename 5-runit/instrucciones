@@ -1,0 +1,44 @@
+Hay que adaptar un poco las instrucciones para la compilación cruzada
+de RUNIT.
+
+En:
+***cd /home/clfs/cross-compilador-dev/5-runit
+Probamos en chroot en /
+
+sudo su
+mkdir -p package
+chmod -v 1755 package
+
+El original lo hace en /package
+
+cd package
+wget http://smarden.org/runit/runit-2.1.2.tar.gz
+
+gunzip runit-2.1.2.tar
+tar -xpf runit-2.1.2.tar
+rm runit-2.1.2.tar
+cd admin/runit-2.1.2
+
+¿Pero cómo indicar que es gcc -m32?
+
+Pues cambiado conf-cc and conf-ld
+echo 'gcc -m32' >src/conf-cc
+echo 'gcc -m32 -s' >src/conf-ld
+
+Ahora para compilar
+
+package/install
+
+Se porduce un error---------------
+./compile chkshsgr.c
+In file included from /usr/include/unistd.h:25:0,
+                 from chkshsgr.c:3:
+/usr/include/features.h:367:25: fatal error: sys/cdefs.h: No existe el archivo o el directorio
+compilation terminated.
+Makefile:177: fallo en las instrucciones para el objetivo 'chkshsgr.o'
+make: *** [chkshsgr.o] Error 1
+
+Empiezo de nuevo pero en chroot.
+En le entorno de chroot se compila con m32 sin problemas.
+
+

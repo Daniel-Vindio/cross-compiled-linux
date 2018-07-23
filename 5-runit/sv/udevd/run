@@ -1,0 +1,4 @@
+#!/bin/bash -e
+echo "daemon udevd"
+exec 2>&1
+exec /sbin/udevd 2>&1

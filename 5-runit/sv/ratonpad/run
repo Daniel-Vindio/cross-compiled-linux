@@ -1,0 +1,15 @@
+#!/bin/bash
+
+[ -f /etc/sysconfig/mouse ] && . /etc/sysconfig/mouse
+
+echo -e "---- ./run ratón pad"
+
+exec /usr/sbin/gpm -D -m "${MDEVICE}" -t "${PROTOCOL}" ${GPMOPTS} > /dev/null 2>&1
+
+#experimento. A ver si esta versión simplificada produce esa entrada continua
+#exec /usr/sbin/gpm -D -m "${MDEVICE}" -t "${PROTOCOL}" ${GPMOPTS}
+#echo -e "aquí estoy otra vez....raton"
+#funciona perfectamente. Al quitar el dev/null, se muestras los mensajes del
+#comando gpm.
+#!!!!! no se imprime el segundo mensaje !!! es como si no siguiera leyendo más
+#adelante de exec /usr/sbin/gpm -D...

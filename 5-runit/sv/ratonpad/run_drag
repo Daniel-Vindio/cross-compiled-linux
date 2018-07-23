@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# gpm:  The main mouse server for GNU Linux.
+#
+
+. /etc/sysconfig/mouse || exit 1;
+
+echo -e "Eeeeh! soy gpm pero de Dragora"
+
+if [ -x /usr/sbin/gpm ]; then
+  exec /usr/sbin/gpm -D -m $MDEVICE -t $PROTOCOL > /dev/null 2>&1
+fi
+

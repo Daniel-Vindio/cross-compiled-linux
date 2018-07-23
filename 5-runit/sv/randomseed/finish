@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+echo -e "randomseed service finish"
+exec 2>&1
+exec /etc/sv/randomseed/randomseed-service_fin.sh
+

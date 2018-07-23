@@ -1,0 +1,42 @@
+#!/bin/sh
+exec 2>&1
+
+PATH=/command:/sbin:/bin:/usr/sbin:/usr/bin
+
+LAST=0
+test -x /etc/runit/reboot && LAST=6 && touch /fastboot
+
+echo 'Waiting for services to stop...'
+sv -w196 force-stop /service/*
+sv exit /service/*
+
+#echo 'Shutdown...'
+#/etc/init.d/rc $LAST
+
+
+#---------------DESMONTAJE (S40 EN LFS)---------------------------------
+
+# Don't unmount virtual file systems like /run
+echo "Unmounting all other currently mounted file systems..."
+umount -a -d -r -t notmpfs,nosysfs,nodevtmpfs,noproc,nodevpts #>/dev/null
+
+# Make sure / is mounted read only (umount bug)
+mount -o remount,ro /
+
+#---------------DESACTIVACIoN DEL SWAP(S20 EN LFS)----------------------
+echo "Deactivating all swap files/partitions..."
+swapoff -a
+
+
+case "$LAST" in
+  0)
+    echo "Halting system..."
+    halt -d -f -i -p
+	;;
+
+  6)
+	#touch /fastboot en este momento ya es read only
+	echo "Restarting system..."
+	reboot -d -f -i
+	;;
+esac

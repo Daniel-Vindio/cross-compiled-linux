@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "---- ./run Se abre la consola tty1"
+exec /usr/local/bin/chpst -P /sbin/agetty 38400 tty1 linux

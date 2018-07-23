@@ -1,0 +1,5 @@
+#!/bin/bash
+exec 2>&1
+mkdir -p /tmp/klogd
+/usr/local/bin/svlogd -tt /tmp/klogd
+

@@ -1,0 +1,8 @@
+#!/bin/bash -e
+
+echo -e "---- ./run sshd inicio"
+
+exec 2>&1
+/usr/sbin/sshd -D -e
+
+echo -e "es despues de run sshd ¿me ves?"

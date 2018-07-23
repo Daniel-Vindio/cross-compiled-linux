@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+echo -e "---- ./finish network.eth0"
+exec 2>&1
+exec /etc/sv/network.eth0/network.eth0_fin.sh
+

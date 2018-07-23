@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+echo -e "---- ./run localnet inicio"
+exec 2>&1
+exec /etc/sv/localnet/localnet_ini.sh
