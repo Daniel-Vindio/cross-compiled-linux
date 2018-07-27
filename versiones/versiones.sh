@@ -126,6 +126,7 @@ VER_eudev="3.2.5"
 VER_man_db="2.8.1"
 VER_dietlibc="0.33"
 VER_runit="2.1.2"
+VER_gpm="1.20.7"
 
 for i in $paquetes; do
 	export VER_$i
