@@ -429,6 +429,8 @@ control_flujo () {
 
 ##ibasicsyssw127_kernel.config = config
 
+#Daemon para el mousepad
+./ibasicsyssw128_gpm.sh $VER_gpm bz2
 
 echo -e "
 #############################\n\
