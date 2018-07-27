@@ -35,7 +35,7 @@ qi sed tar tcl texinfo unzip util_linux vim xz zlib flex readline bc \
 attr acl libcap shadow psmisc iana libtool gdbm gperf expat inetutils \
 xmlparser intltool autoconf automake kmod elfutils libelf tcc libffi \
 openssl Python ninja meson procps e2fsprogs groff grub less iproute2 \
-kbd libpipeline sysklogd sysvinit eudev man_db dietlibc runit"
+kbd libpipeline sysklogd sysvinit eudev man_db dietlibc runit gpm"
 
 VER_PRUEBA="prueba_ok"
 VER_binutils="2.30"
