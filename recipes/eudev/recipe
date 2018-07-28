@@ -55,7 +55,8 @@ mkdir -pv ${destdir}/etc/udev/rules.d
 tar -xvf ${tardir}/udev-lfs-20171102.tar.bz2
 make -f udev-lfs-20171102/Makefile.lfs DESTDIR=${destdir} install
 
-"udevadm hwdb --update"
+#udevadm hwdb --update
+#hay que levarlo a un post qi install
 
 }
 
