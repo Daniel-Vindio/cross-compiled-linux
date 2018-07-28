@@ -27,16 +27,17 @@ mount -o remount,ro /
 echo "Deactivating all swap files/partitions..."
 swapoff -a
 
-
-case "$LAST" in
-  0)
-    echo "Halting system..."
-    halt -d -f -i -p
-	;;
-
-  6)
-	#touch /fastboot en este momento ya es read only
-	echo "Restarting system..."
-	reboot -d -f -i
-	;;
-esac
+##Halt y Reboot son parte del paquete SysVinit, que no se ha instalado.
+#Todo este case no hace nada en un sistema Runit.
+#case "$LAST" in
+#  0)
+#    echo "Halting system..."
+#    halt -d -f -i -p
+#	;;
+#
+#  6)
+#	#touch /fastboot en este momento ya es read only
+#	echo "Restarting system..."
+#	reboot -d -f -i
+#	;;
+#esac

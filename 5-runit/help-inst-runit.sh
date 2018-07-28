@@ -37,7 +37,7 @@ fi
 
 #---------------------------------------
 
-qi -d runit-$VER_runit-i686+1.tlz
+qi -dp runit-$VER_runit-i686+1.tlz
 qi -i runit-$VER_runit-i686+1.tlz
 
 commands="chpst runit runit-init runsv runsvchdir runsvdir sv svlogd utmpset"
@@ -50,10 +50,16 @@ for i in $commands; do
 	ln -svf /command/$i /usr/local/bin/$i
 done
 
-ln -svf /etc/sv/getty-1 /service/
+servicios="dbusdaemon getty-1 getty-3 iptables klogd localnet network.eth0 \
+randomseed ratonpad syslogd"
+
+for i in $servicios; do
+	ln -svf /etc/sv/$i /service/
+done
 
 
-
+cp -v /usr/pkg/runit-$VER_runit-i686+1/package/admin/runit/command/runit* /sbin/
+ln -svf runit-init /sbin/init
 
 #Registro de tiempos de ejecución
 T_FINAL=$(date +"%T")
