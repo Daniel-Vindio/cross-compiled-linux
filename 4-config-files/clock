@@ -1,5 +1,5 @@
 #/etc/sysconfig/clock
-
+#En la versión sin SysV, esto se activa directamente en /etc/runit/1
 UTC=1
 
 # Set this to any options you might need to give to hwclock,

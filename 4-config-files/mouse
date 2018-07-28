@@ -1,4 +1,5 @@
 #/etc/sysconfig/mouse
+#En la versión sin SysV, esto se activa directamente en el servicio de runit
 
 #MDEVICE="<yourdevice>"
 #PROTOCOL="<yourprotocol>"
