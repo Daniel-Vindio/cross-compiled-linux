@@ -156,7 +156,7 @@ registro_error "cp -av lib64/lib*.so.5* /usr/lib64"
 ######------------------------------------------------------------------
 
 cd ..
-#rm -rf $nombre_dir && echo "Borrado el directorio $nombre_dir"
+rm -rf $nombre_dir && echo "Borrado el directorio $nombre_dir"
 
 
 #Registro de tiempos de ejecución
