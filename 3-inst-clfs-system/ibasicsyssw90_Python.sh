@@ -107,6 +107,9 @@ registro_error "chmod 1"
 chmod -v 755 /usr/lib/libpython3.so
 registro_error "chmod 2"
 
+ldconfig
+registro_error "ldconfig"
+
 #No instalo la documentación. Se mira en internet.
 
 ######------------------------------------------------------------------

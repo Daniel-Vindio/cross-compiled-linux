@@ -84,7 +84,7 @@ PKG_CONFIG_PATH=${PKG_CONFIG_PATH32} \
 --bindir=/bin \
 --sysconfdir=/etc \
 --libdir=/usr/lib \
---with-rootlibdir=/lib \ 
+--with-rootlibdir=/lib \
 --with-zlib \
 --with-xz
 registro_error $MSG_CONF
