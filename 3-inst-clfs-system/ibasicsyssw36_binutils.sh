@@ -111,7 +111,7 @@ registro_error $MSG_INST
 
 ######------------------------------------------------------------------
 
-cd ..
+cd ../..
 rm -rf $nombre_dir && echo "Borrado el directorio $nombre_dir"
 
 
