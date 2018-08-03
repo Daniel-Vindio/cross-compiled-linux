@@ -76,11 +76,17 @@ cd $nombre_dir
 echo -e "\nInstalacion de $nombre_dir " >> $FILE_BITACORA
 
 
+
+#./configure \
+#--prefix=/usr \
+#--docdir=/usr/share/doc/pkg-config-$1 \
+#--with-pc-path=/usr/share/pkgconfig
+
 CC="gcc ${BUILD64}" \
-./configure \
---prefix=/usr \
---docdir=/usr/share/doc/pkg-config-$1 \
---with-pc-path=/usr/share/pkgconfig
+./configure --prefix=/usr \
+--with-internal-glib \
+--disable-host-tool \
+--docdir=/usr/share/doc/pkg-config-$1
 registro_error $MSG_CONF
 
 make
