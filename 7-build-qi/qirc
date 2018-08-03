@@ -1,0 +1,67 @@
+#
+# qirc: Runtime configuration file for Qi.
+#
+# Qi looks for this file in:
+#     1 - $HOME/.qirc
+#     2 - ${sysconfdir}/qirc
+#
+# File syntax considerations:
+#
+# * Variables are declared as 'name=value'.
+# * Declaration of values should only take one line, no line break.
+# * Assignments like 'name=$var' are only interpreted as literal.
+#
+# Uncomment a variable to set a new value other than default.
+# For more information, type: info qi 'the qirc file'
+
+#### FIRST SECTION: package settings
+
+# Package installation directory
+#packagedir=/usr/pkg
+
+# Target directory where the links will be made
+targetdir=/
+
+
+#### SECOND SECTION: build settings
+
+# C compiler flags
+#QICFLAGS=-g0 -Os
+
+# C++ compiler flags
+#QICXXFLAGS=-g0 -Os
+
+# Linker flags
+#QILDFLAGS=-s
+
+# Temporary directory for sources during compilation
+#TMPDIR=/usr/src/qi/build
+
+# Architecture name to use by default (autodetected)
+#arch=
+
+# Parallel jobs for the compiler
+jobs=4
+
+# Output directory where the packages are written
+outdir=/qipkgs
+
+# Working tree where archives, patches, and recipes are expected
+#worktree=/usr/src/qi
+
+# Where to find the sources (tarballs)
+tardir=/sources
+
+# General network downloader
+#netget=wget -c -w1 -t3 --no-check-certificate
+
+# Network tool for the RSYNC protocol
+#rsync=rsync -v -a -L -z -i --progress
+
+# Arguments for 'configure'
+configure_args=--prefix=/usr --libexecdir=/usr/libexec --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/usr/etc --localstatedir=/usr/var
+
+# Prefixes for documentation
+infodir=/usr/share/info
+mandir=/usr/share/man
+docdir=/usr/share/doc
