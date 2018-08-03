@@ -1,6 +1,10 @@
 #!/bin/bash
 
-[ -f /etc/sysconfig/mouse ] && . /etc/sysconfig/mouse
+#[ -f /etc/sysconfig/mouse ] && . /etc/sysconfig/mouse
+
+MDEVICE="/dev/input/mice"
+PROTOCOL="imps2"
+GPMOPTS=""
 
 echo -e "---- ./run ratón pad"
 
