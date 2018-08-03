@@ -1,5 +1,5 @@
-# Instalador de sed
-# 64 bit on 64 bit machine, MULTILIB.
+# Instalador de bzip
+# 32 bit on 64 bit machine, MULTILIB.
 
 nombre=$(echo $0 | cut -d "." -f2 | cut -d "_" -f2)
 nombre_comp=$nombre-$1.tar.$2
@@ -76,34 +76,32 @@ cd $nombre_dir
 
 echo -e "\nInstalacion de $nombre_dir 32 bit on 64 bit machine, MULTILIB" >> $FILE_BITACORA
 
-sed -i 's/usr/tools/' build-aux/help2man
-registro_error "sed -i 's/usr/tools/' build-aux/help2man"
+sed -i -e 's:ln -s -f $(PREFIX)/bin/:ln -s :' Makefile
+registro_error "sed Makefile"
 
-sed -i 's/testsuite.panic-tests.sh//' Makefile.in
-registro_error "sed -i 's/testsuite.panic-tests.sh//' Makefile.in"
+sed -i 's@X)/man@X)/share/man@g' ./Makefile
+registro_error "sed Makefile 2"
 
-CC="gcc ${BUILD64}" \
-./configure \
---prefix=/usr \
---bindir=/bin
-registro_error $MSG_CONF
+make -f Makefile-libbz2_so CC="gcc ${BUILD32}" CXX="g++ ${BUILD32}"
+registro_error "Make"
 
-make
-registro_error $MSG_MAKE
+make clean
+registro_error "Make clean"
 
-make html
-registro_error "make html"
+make CC="gcc ${BUILD32}" CXX="g++ ${BUILD32}" libbz2.a
+registro_error "Make 2"
 
-#make check 2>&1 | tee $FILE_CHECKS
+#make CC="gcc ${BUILD32}" CXX="g++ ${BUILD32}" check 2>&1 | tee $FILE_CHECKS
 
-make install
-registro_error $MSG_INST
+cp -v libbz2.a /usr/lib
+registro_error "cp 1"
 
-install -d -m755 /usr/share/doc/sed-$1
-registro_error "install -d -m755 /usr/share/doc/sed-$1"
+cp -av libbz2.so* /lib
+registro_error "cp 2"
 
-install -m644 doc/sed.html /usr/share/doc/sed-$1
-registro_error "install -m644 doc/sed.html /usr/share/doc/sed-$1"
+ln -sv ../../lib/libbz2.so.1.0 /usr/lib/libbz2.so
+registro_error "ln"
+
 
 ######------------------------------------------------------------------
 

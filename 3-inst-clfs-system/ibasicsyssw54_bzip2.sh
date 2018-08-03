@@ -1,4 +1,4 @@
-# Instalador de sed
+# Instalador de bzip
 # 64 bit on 64 bit machine, MULTILIB.
 
 nombre=$(echo $0 | cut -d "." -f2 | cut -d "_" -f2)
@@ -74,36 +74,50 @@ cd $nombre_dir
 
 #----------------------CONFIGURE - MAKE - MAKE INSTALL------------------
 
-echo -e "\nInstalacion de $nombre_dir 32 bit on 64 bit machine, MULTILIB" >> $FILE_BITACORA
+echo -e "\nInstalacion de $nombre_dir 64 bit on 64 bit machine, MULTILIB" >> $FILE_BITACORA
 
-sed -i 's/usr/tools/' build-aux/help2man
-registro_error "sed -i 's/usr/tools/' build-aux/help2man"
+sed -i -e 's:ln -s -f $(PREFIX)/bin/:ln -s :' Makefile
+registro_error "sed Makefile"
 
-sed -i 's/testsuite.panic-tests.sh//' Makefile.in
-registro_error "sed -i 's/testsuite.panic-tests.sh//' Makefile.in"
+sed -i 's@X)/man@X)/share/man@g' ./Makefile
+registro_error "sed Makefile 2"
 
-CC="gcc ${BUILD64}" \
-./configure \
---prefix=/usr \
---bindir=/bin
-registro_error $MSG_CONF
+sed -i 's@/lib\(/\| \|$\)@/lib64\1@g' Makefile
+registro_error "sed Makefile 3"
 
-make
-registro_error $MSG_MAKE
+make -f Makefile-libbz2_so CC="gcc ${BUILD64}" CXX="g++ ${BUILD64}"
+registro_error "make -f Makefile-libbz2_so"
 
-make html
-registro_error "make html"
+make clean
+registro_error "make clean"
 
-#make check 2>&1 | tee $FILE_CHECKS
+make CC="gcc ${BUILD64}" CXX="g++ ${BUILD64}"
+registro_error "make"
 
-make install
-registro_error $MSG_INST
+#make CC="gcc ${BUILD64}" CXX="g++ ${BUILD64}" check 2>&1 | tee $FILE_CHECKS
 
-install -d -m755 /usr/share/doc/sed-$1
-registro_error "install -d -m755 /usr/share/doc/sed-$1"
+make CC="gcc ${BUILD64}" CXX="g++ ${BUILD64}" PREFIX=/usr install
+registro_error "Make install"
 
-install -m644 doc/sed.html /usr/share/doc/sed-$1
-registro_error "install -m644 doc/sed.html /usr/share/doc/sed-$1"
+cp -v bzip2-shared /bin/bzip2
+registro_error "cp 1"
+
+cp -av libbz2.so* /lib64
+registro_error "cp 2"
+
+ln -sv ../../lib64/libbz2.so.1.0 /usr/lib64/libbz2.so
+registro_error "ln 1"
+
+rm -v /usr/bin/{bunzip2,bzcat,bzip2}
+registro_error "rm 1"
+
+ln -sv bzip2 /bin/bunzip2
+registro_error "ln 2"
+
+ln -sv bzip2 /bin/bzcat
+registro_error "ln 3"
+
+
 
 ######------------------------------------------------------------------
 

@@ -109,7 +109,7 @@ registro_error $MSG_CONF
 make
 registro_error $MSG_MAKE
 
-echo "quit" | ./bc/bc -l Test/checklib.b | tee $FILE_CHECKS
+#echo "quit" | ./bc/bc -l Test/checklib.b | tee $FILE_CHECKS
 
 make install
 registro_error $MSG_INST

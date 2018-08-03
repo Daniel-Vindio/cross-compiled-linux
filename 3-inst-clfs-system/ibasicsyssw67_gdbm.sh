@@ -89,7 +89,7 @@ registro_error $MSG_CONF
 make
 registro_error $MSG_MAKE
 
-make check 2>&1 | tee $FILE_CHECKS
+#make check 2>&1 | tee $FILE_CHECKS
 
 make install 
 registro_error $MSG_INST

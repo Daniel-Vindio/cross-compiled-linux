@@ -88,7 +88,7 @@ registro_error $MSG_CONF
 make
 registro_error $MSG_MAKE
 
-make LDEMULATION=elf_i386 check 2>&1 | tee $FILE_CHECKS
+#make LDEMULATION=elf_i386 check 2>&1 | tee $FILE_CHECKS
 
 make install 
 registro_error $MSG_INST

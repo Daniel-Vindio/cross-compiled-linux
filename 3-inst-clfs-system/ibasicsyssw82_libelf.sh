@@ -92,7 +92,7 @@ registro_error "sed"
 make
 registro_error $MSG_MAKE
 
-make check 2>&1 | tee $FILE_CHECKS
+#make check 2>&1 | tee $FILE_CHECKS
 
 make -C libelf install 
 registro_error $MSG_INST

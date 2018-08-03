@@ -95,7 +95,7 @@ registro_error $MSG_CONF
 make
 registro_error $MSG_MAKE
 
-make test 2>&1 | tee $FILE_CHECKS
+#make test 2>&1 | tee $FILE_CHECKS
 
 sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
 registro_error "sed"

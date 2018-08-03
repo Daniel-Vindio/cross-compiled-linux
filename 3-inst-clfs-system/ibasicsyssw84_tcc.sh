@@ -103,7 +103,7 @@ registro_error $MSG_CONF
 make
 registro_error $MSG_MAKE
 
-make test 2>&1 | tee $FILE_CHECKS
+#make test 2>&1 | tee $FILE_CHECKS
 
 make install 
 registro_error $MSG_INST

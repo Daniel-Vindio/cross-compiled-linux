@@ -98,7 +98,7 @@ registro_error $MSG_CONF
 make libs
 registro_error $MSG_MAKE
 
-make check 2>&1 | tee $FILE_CHECKS
+#make check 2>&1 | tee $FILE_CHECKS
 
 make install-libs
 registro_error $MSG_INST

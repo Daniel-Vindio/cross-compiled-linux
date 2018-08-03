@@ -125,7 +125,7 @@ sed -i s/\"1\"/\"8\"/1 /usr/share/man/man8/chroot.8
 registro_error "sed"
 
 #----------pruebas------------------------
-make NON_ROOT_USERNAME=nobody check-root 2>&1 | tee $FILE_CHECKS
+#make NON_ROOT_USERNAME=nobody check-root 2>&1 | tee $FILE_CHECKS
 #echo "dummy:x:1000:nobody" >> /etc/group
 #registro_error "dummy"
 #chown -Rv nobody .
