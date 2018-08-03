@@ -200,6 +200,8 @@ mensj="Coldplug de dispositivos udevadm trigger (3 de 3)"
     /sbin/udevadm trigger --action=change --type=devices
 mensj_pos
 
+hwclock --hctosys --utc
+
 #-----------------------------------------------------------------------------------------------
 #read -p "pulsa para seguir"
 
