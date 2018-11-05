@@ -12,8 +12,8 @@ if [ $(id -u) -ne 0 ]
 	exit 1
 fi
 
-CLFS=/mnt/clfs
-export CLFS
+#CLFS=/mnt/clfs #You don't need to define it here again
+#export CLFS
 
 /usr/sbin/chroot "${CLFS}" /tools/bin/env -i \
 HOME=/root \
