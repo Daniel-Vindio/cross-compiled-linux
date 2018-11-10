@@ -49,6 +49,11 @@ control_flujo () {
 # So I think its better to build them now, in chroot, but with /tools, and
 # later install them again, but with the rest of the system.
 # m4 requires texinfo, that's why it is build before.
+# * gperf and help2man needed for building m4 with m4 sources from savannah.
+# *You needed when gnulib give porblems.
+
+#./ibasicsyssw130_help2man.sh $VER_help2man xz
+#./ibasicsyssw129_gperf.sh 	$VER_gperf 	gz
 ./ibasicsyssw6_m4.sh 		$VER_m4 	xz
 ./ibasicsyssw7_bison.sh 	$VER_bison 	xz
 
