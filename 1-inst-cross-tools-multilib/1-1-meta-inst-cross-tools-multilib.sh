@@ -21,11 +21,19 @@ echo -e "
 ./imultilib8_mpc.sh 		$VER_mpc 	gz
 #./imultilib9_isl.sh 		$VER_isl 	gz
 #./imultilib10_cloog.sh 		$VER_cloog 	gz
-./imultilib11_binutils.sh 	$VER_binutils gz
-./imultilib12_gcc.sh		$VER_gcc	gz
-./imultilib13_glibc.sh 		$VER_glibc	xz
-./imultilib14_glibc.sh 		$VER_glibc	xz
-./imultilib15_gcc.sh		$VER_gcc	gz
+
+#Via GLIBC
+####./imultilib11_binutils.sh 	$VER_binutils gz
+####./imultilib12_gcc.sh		$VER_gcc	gz
+####./imultilib13_glibc.sh 		$VER_glibc	xz
+####./imultilib14_glibc.sh 		$VER_glibc	xz
+####./imultilib15_gcc.sh		$VER_gcc	gz
+
+#Via MUSL
+./imuslXX_binutils.sh 	$VER_binutils gz
+./imuslXX_gcc.sh		$VER_gcc	gz
+./imuslXX_musl.sh		$VER_musl	gz
+./imuslXXX_gcc.sh		$VER_gcc	gz
 
 
 echo -e "
