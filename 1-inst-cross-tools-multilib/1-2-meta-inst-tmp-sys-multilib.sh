@@ -18,7 +18,6 @@ echo -e "
 ##Via MUSL
 ./imusl48_gcc.sh 			$VER_gcc		gz
 
-./imultilib23_gcc.sh		$VER_gcc		gz
 ./imultilib24_ncurses.sh 	$VER_ncurses 	gz
 ./imultilib25_bash.sh 		$VER_bash		gz
 ./imultilib26_bzip2.sh 		$VER_bzip2 		gz
