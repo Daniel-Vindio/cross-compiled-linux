@@ -19,21 +19,22 @@ echo -e "
 ./imultilib6_gmp.sh 		$VER_gmp 	xz
 ./imultilib7_mpfr.sh 		$VER_mpfr 	xz
 ./imultilib8_mpc.sh 		$VER_mpc 	gz
-#./imultilib9_isl.sh 		$VER_isl 	gz
-#./imultilib10_cloog.sh 		$VER_cloog 	gz
+##No needed anymore. I keep them as a curiosity.
+##./imultilib9_isl.sh 		$VER_isl 	gz
+##./imultilib10_cloog.sh 		$VER_cloog 	gz
 
-#Via GLIBC
+##Via GLIBC
 ####./imultilib11_binutils.sh 	$VER_binutils gz
 ####./imultilib12_gcc.sh		$VER_gcc	gz
 ####./imultilib13_glibc.sh 		$VER_glibc	xz
 ####./imultilib14_glibc.sh 		$VER_glibc	xz
 ####./imultilib15_gcc.sh		$VER_gcc	gz
 
-#Via MUSL
-./imuslXX_binutils.sh 	$VER_binutils gz
-./imuslXX_gcc.sh		$VER_gcc	gz
-./imuslXX_musl.sh		$VER_musl	gz
-./imuslXXX_gcc.sh		$VER_gcc	gz
+##Via MUSL
+./imusl44_binutils.sh 	$VER_binutils gz
+./imusl45_gcc.sh		$VER_gcc	gz
+./imusl46_musl.sh		$VER_musl	gz
+./imusl47_gcc.sh		$VER_gcc	gz
 
 
 echo -e "

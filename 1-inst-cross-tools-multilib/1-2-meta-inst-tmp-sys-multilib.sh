@@ -8,10 +8,16 @@ echo -e "
 ./imultilib16_gmp.sh 		$VER_gmp 		xz
 ./imultilib17_mpfr.sh 		$VER_mpfr 		xz
 ./imultilib18_mpc.sh 		$VER_mpc 		gz
-#./imultilib19_isl.sh 		$VER_isl 		gz
-#./imultilib20_cloog.sh 		$VER_cloog 		gz
+##./imultilib19_isl.sh 		$VER_isl 		gz
+##./imultilib20_cloog.sh 		$VER_cloog 		gz
 ./imultilib21_zlib.sh		$VER_zlib		xz
 ./imultilib22_binutils.sh	$VER_binutils 	gz
+
+##Via GLIBC
+./imultilib23_gcc.sh		$VER_gcc		gz
+##Via MUSL
+./imusl48_gcc.sh 			$VER_gcc		gz
+
 ./imultilib23_gcc.sh		$VER_gcc		gz
 ./imultilib24_ncurses.sh 	$VER_ncurses 	gz
 ./imultilib25_bash.sh 		$VER_bash		gz
